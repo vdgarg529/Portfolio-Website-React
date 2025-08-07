@@ -1,8 +1,10 @@
+import SPSIcon from '../assets/sps.png';
+
 export const experiences = [
   {
     title: "National Informatics Center",
     company_name: "Tech Innovations",
-    icon: "/NIC.png",
+    icon: SPSIcon,
     date: "Jan 2022 - Present",
     points: [
       "Developed responsive web applications using React.js and Tailwind CSS",
