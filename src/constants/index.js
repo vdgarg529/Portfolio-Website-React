@@ -2,7 +2,7 @@ export const experiences = [
   {
     title: "National Informatics Center",
     company_name: "Tech Innovations",
-    icon: "NIC.png",
+    icon: "/NIC.png",
     date: "Jan 2022 - Present",
     points: [
       "Developed responsive web applications using React.js and Tailwind CSS",
