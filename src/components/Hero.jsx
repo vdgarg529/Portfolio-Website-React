@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiDownload, HiMail } from 'react-icons/hi';
 import profilePic from '../assets/profile.jpg';
+import resumeDownload from '../assets/Resume.pdf';
 
 const qualities = [
   { emoji: "🚀", text: "Passionate Problem Solver" },
@@ -211,7 +212,7 @@ const Hero = ({ darkMode }) => {
             >
               <HiDownload size={20} />
               <a
-                href="src/assets/resume.pdf"
+                href={resumeDownload}
                 download="Resume.pdf"
               >
                 Download CV

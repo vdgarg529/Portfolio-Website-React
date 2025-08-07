@@ -1,10 +1,20 @@
+import NICIcon from '../assets/NIC.png';
 import SPSIcon from '../assets/sps.png';
+import MBIcon from '../assets/MagnetBrains.png';
+import PersiIcon from '../assets/Persistent.webp';
+import DSPIcon from '../assets/sps.png';
+import IIITIcon from '../assets/IIITA.jpg';
+import UITIcon from '../assets/UIT,RGPV.jpg';
+import GGIAIcon from '../assets/GyanGanga.jpg';
+import RYANIcon from '../assets/Ryan.jpeg';
+
+
 
 export const experiences = [
   {
     title: "National Informatics Center",
     company_name: "Tech Innovations",
-    icon: SPSIcon,
+    icon: NICIcon,
     date: "Jan 2022 - Present",
     points: [
       "Developed responsive web applications using React.js and Tailwind CSS",
@@ -16,7 +26,7 @@ export const experiences = [
   {
     title: "Sagar Public School",
     company_name: "Tech Innovations",
-    icon: "src/assets/sps.png",
+    icon: SPSIcon,
     date: "Jan 2022 - Present",
     points: [
       "Developed responsive web applications using React.js and Tailwind CSS",
@@ -28,7 +38,7 @@ export const experiences = [
   {
     title: "Magnet Brains",
     company_name: "Tech Innovations",
-    icon: "src/assets/MagnetBrains.png",
+    icon: MBIcon,
     date: "Jan 2022 - Present",
     points: [
       "Developed responsive web applications using React.js and Tailwind CSS",
@@ -40,7 +50,7 @@ export const experiences = [
   {
     title: "Persistent Systems",
     company_name: "Tech Innovations",
-    icon: "src/assets/Persistent.webp",
+    icon: PersiIcon,
     date: "Jan 2022 - Present",
     points: [
       "Developed responsive web applications using React.js and Tailwind CSS",
@@ -67,29 +77,29 @@ export const experiences = [
 export const education = [
   {
     school: "Indian Institute Of Information Technology",
-    degree: "M.Tech, MLIS",
-    icon: "src/assets/IIITA.jpg",
+    degree: "M.Tech [IT-MLIS]",
+    icon: IIITIcon,
     date: "2024 - 2026",
     description: "Graduated with honors. Focus on web technologies and software engineering principles."
   },
   {
     school: "University of Institute Technology",
-    degree: "BTech in Computer Science",
-    icon: "src/assets/UIT,RGPV.jpg",
+    degree: "B.Tech [CSE]",
+    icon: UITIcon,
     date: "2018 - 2022",
     description: "Graduated with honors. Focus on web technologies and software engineering principles."
   },
   {
     school: "Gyan Ganga International School",
-    degree: "Class 12th CBSE",
-    icon: "src/assets/GyanGanga.jpg",
+    degree: "Class 12th [CBSE]",
+    icon: GGIAIcon,
     date: "2017 - 2018",
     description: "Class 12th"
   },
   {
     school: "Ryan International School, Bhopal",
-    degree: "Class 10th CBSE",
-    icon: "src/assets/Ryan.jpeg",
+    degree: "Class 10th [CBSE]",
+    icon: RYANIcon,
     date: "2015 - 2016",
     description: "Class 10th"
   },
