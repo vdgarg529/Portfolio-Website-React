@@ -23,10 +23,10 @@ const ExperienceCard = ({ experience, index }) => (
           <p className="text-secondary">{experience.company_name}</p>
         </div>
       </div>
-      <p className="text-secondary text-sm mb-3">{experience.date}</p>
+      <p className="text-secondary text-sm mb-3 text-justify">{experience.date}</p>
       <ul className="space-y-2">
         {experience.points.map((point, i) => (
-          <li key={i} className="text-white-100 text-sm flex items-start">
+          <li key={i} className="text-white-100 text-sm flex items-start text-justify">
             <span className="mr-2">•</span> {point}
           </li>
         ))}
@@ -35,22 +35,27 @@ const ExperienceCard = ({ experience, index }) => (
   </motion.div>
 );
 
-const Experience = () => (
-  <>
-    <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] mb-10">
+const Experience = ({ darkMode }) => (
+  <div className="w-3/4 mx-auto">
+    <h2
+      className={`font-black text-center mb-6 
+        text-[30px] xs:text-[40px] sm:text-[50px] md:text-[60px] 
+        ${darkMode ? 'text-white' : 'text-gray-900'}`}
+    >
       Work Experience
     </h2>
 
     <div className="relative">
       {experiences.map((experience, index) => (
-        <ExperienceCard 
-          key={index} 
-          experience={experience} 
-          index={index} 
+        <ExperienceCard
+          key={index}
+          experience={experience}
+          index={index}
+          darkMode={darkMode}
         />
       ))}
     </div>
-  </>
+  </div>
 );
 
 export default Experience;

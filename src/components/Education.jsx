@@ -14,19 +14,32 @@ const EducationCard = ({ edu, index }) => (
         alt={edu.school}
         className="w-16 h-16 object-contain rounded-xl"
       />
-      <div>
+      <div className="text-justify">
         <h3 className="text-white font-bold text-xl">{edu.degree}</h3>
         <p className="text-secondary font-medium">{edu.school}</p>
-        <p className="text-secondary text-sm mt-1">{edu.date}</p>
+
+        <div className="flex items-center gap-3 text-sm text-secondary mt-1">
+          <span>{edu.date}</span>
+          {edu.grade && (
+            <span className="bg-yellow-400 text-red-700 px-2 py-0.5 rounded-full text-xs font-semibold">
+              {edu.grade}
+            </span>
+          )}
+        </div>
+
         <p className="mt-3 text-white-100">{edu.description}</p>
       </div>
     </div>
   </motion.div>
 );
 
-const Education = () => (
+const Education = ({ darkMode }) => (
   <>
-    <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] mb-10">
+    <h2
+      className={`font-black text-center mb-10 
+        text-[30px] xs:text-[40px] sm:text-[50px] md:text-[60px] 
+        ${darkMode ? 'text-white' : 'text-gray-900'}`}
+    >
       Education
     </h2>
 

@@ -176,11 +176,11 @@ const Skills = ({ darkMode }) => {
   return (
     <div className="px-4 py-8">
       <h2
-        className={`font-black text-3xl sm:text-4xl md:text-5xl text-cente mb-12 ${
-          darkMode ? 'text-white' : 'text-gray-900'
-        }`}
+        className={`font-black text-center mb-6 
+          text-[30px] xs:text-[40px] sm:text-[50px] md:text-[60px] 
+          ${darkMode ? 'text-white' : 'text-gray-900'}`}
       >
-        Skills/Tools Used & Achievements
+        Skills And Achievements
       </h2>
 
       {/* Main Tabs */}
