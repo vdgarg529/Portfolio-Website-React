@@ -1,108 +1,87 @@
-// // // src/components/Notes.jsx
-// // import { useState } from "react";
-// // import ReactMarkdown from "react-markdown";
-// // import { notesData } from "../constants/public_notes";
-
-// // const Notes = ({ darkMode }) => {
-// //   const [selectedSubject, setSelectedSubject] = useState(null);
-// //   const [selectedTopic, setSelectedTopic] = useState(null);
-
-// //   return (
-// //     <div className={`min-h-screen pt-16 ${darkMode ? "bg-[#050816] text-white" : "bg-gray-50 text-gray-900"}`}>
-// //       {/* Subject Tabs */}
-// //       <div className={`flex overflow-x-auto sticky top-16 z-10 ${darkMode ? "bg-[#050816] border-b border-gray-700" : "bg-white border-b border-gray-300"}`}>
-// //         {Object.keys(notesData).map((subject) => (
-// //           <button
-// //             key={subject}
-// //             className={`px-6 py-3 font-semibold whitespace-nowrap transition-colors ${
-// //               selectedSubject === subject
-// //                 ? "border-b-4 border-purple-500 text-purple-500"
-// //                 : darkMode
-// //                 ? "hover:text-purple-400 text-gray-300"
-// //                 : "hover:text-purple-600 text-gray-700"
-// //             }`}
-// //             onClick={() => {
-// //               setSelectedSubject(subject);
-// //               setSelectedTopic(null);
-// //             }}
-// //           >
-// //             {subject}
-// //           </button>
-// //         ))}
-// //       </div>
-
-// //       <div className="flex flex-1 h-[calc(100vh-4rem)]">
-// //         {/* Sidebar */}
-// //         {selectedSubject && (
-// //           <div className={`w-64 border-r p-4 overflow-y-auto ${darkMode ? "border-gray-700 bg-[#050816]" : "border-gray-300 bg-white"}`}>
-// //             <h2 className="font-bold mb-4">{selectedSubject}</h2>
-// //             <ul className="space-y-2">
-// //               {notesData[selectedSubject].map((note, idx) => (
-// //                 <li key={idx}>
-// //                   <button
-// //                     className={`w-full text-left px-2 py-1 rounded transition-colors ${
-// //                       selectedTopic === idx
-// //                         ? "bg-purple-500 text-white"
-// //                         : darkMode
-// //                         ? "hover:bg-gray-700 text-gray-300"
-// //                         : "hover:bg-gray-200 text-gray-700"
-// //                     }`}
-// //                     onClick={() => setSelectedTopic(idx)}
-// //                   >
-// //                     {note.topic}
-// //                   </button>
-// //                 </li>
-// //               ))}
-// //             </ul>
-// //           </div>
-// //         )}
-
-// //         {/* Content Viewer */}
-// //         <div className="flex-1 p-6 overflow-y-auto">
-// //           {selectedTopic !== null ? (
-// //             <div className={`${darkMode ? "prose prose-invert max-w-none" : "prose max-w-none"}`}>
-// //               <ReactMarkdown
-// //                 components={{
-// //                   h1: ({node, ...props}) => <h1 className="text-purple-500 mb-4" {...props} />,
-// //                   h2: ({node, ...props}) => <h2 className="text-purple-400 mb-3" {...props} />,
-// //                   p: ({node, ...props}) => <p className="mb-4" {...props} />
-// //                 }}
-// //               >
-// //                 {notesData[selectedSubject][selectedTopic].content}
-// //               </ReactMarkdown>
-// //             </div>
-// //           ) : (
-// //             <div className="h-full flex items-center justify-center">
-// //               <p className="opacity-70 text-lg">
-// //                 {selectedSubject
-// //                   ? "Select a topic to view notes."
-// //                   : "Select a subject to begin."}
-// //               </p>
-// //             </div>
-// //           )}
-// //         </div>
-// //       </div>
-// //     </div>
-// //   );
-// // };
-
-// // export default Notes;
-
-
-
-
-// // src/components/Notes.jsx
 // import { useState } from "react";
 // import ReactMarkdown from "react-markdown";
 // import { notesData } from "../constants/public_notes";
+// import {
+//   ChevronRight,
+//   ChevronDown,
+//   PanelLeftClose,
+//   PanelLeftOpen,
+// } from "lucide-react";
 
 // const Notes = ({ darkMode }) => {
-//   const [selectedSubject, setSelectedSubject] = useState(null);
-//   const [selectedTopic, setSelectedTopic] = useState(null);
+//   const [selectedPath, setSelectedPath] = useState([]);
+//   const [openNodes, setOpenNodes] = useState(new Set());
+//   const [sidebarVisible, setSidebarVisible] = useState(true);
+
+//   const getContentAtPath = (path) => {
+//     let node = notesData;
+//     for (let key of path) node = node[key];
+//     return node?.content;
+//   };
+
+//   const toggleNode = (pathKey) => {
+//     setOpenNodes((prev) => {
+//       const newSet = new Set(prev);
+//       if (newSet.has(pathKey)) newSet.delete(pathKey);
+//       else newSet.add(pathKey);
+//       return newSet;
+//     });
+//   };
+
+//   // Recursive tree renderer
+//   const renderTree = (node, path = []) => (
+//     <ul className="ml-2 space-y-1">
+//       {Object.keys(node).map((key) => {
+//         const newPath = [...path, key];
+//         const isLeaf = node[key]?.content !== undefined;
+//         const pathKey = newPath.join(">");
+//         const isOpen = openNodes.has(pathKey);
+
+//         return (
+//           <li key={pathKey}>
+//             <div className="flex items-center">
+//               {!isLeaf && (
+//                 <button
+//                   onClick={() => toggleNode(pathKey)}
+//                   className="mr-1 text-xs"
+//                 >
+//                   {isOpen ? (
+//                     <ChevronDown size={16} />
+//                   ) : (
+//                     <ChevronRight size={16} />
+//                   )}
+//                 </button>
+//               )}
+
+//               <button
+//                 className={`flex-1 text-left px-2 py-1 rounded transition-colors ${
+//                   JSON.stringify(selectedPath) === JSON.stringify(newPath)
+//                     ? "bg-purple-500 text-white"
+//                     : darkMode
+//                     ? "hover:bg-gray-700 text-gray-300"
+//                     : "hover:bg-gray-200 text-gray-700"
+//                 }`}
+//                 onClick={() => {
+//                   if (isLeaf) setSelectedPath(newPath);
+//                   else toggleNode(pathKey);
+//                 }}
+//               >
+//                 {key}
+//               </button>
+//             </div>
+
+//             {!isLeaf && isOpen && renderTree(node[key], newPath)}
+//           </li>
+//         );
+//       })}
+//     </ul>
+//   );
+
+//   const content = getContentAtPath(selectedPath);
 
 //   return (
 //     <div
-//       className={`min-h-screen pt-16 ${
+//       className={`min-h-screen pt-16 relative flex flex-col ${
 //         darkMode ? "bg-[#050816] text-white" : "bg-gray-50 text-gray-900"
 //       }`}
 //     >
@@ -118,15 +97,16 @@
 //           <button
 //             key={subject}
 //             className={`px-6 py-3 font-semibold whitespace-nowrap transition-colors ${
-//               selectedSubject === subject
+//               selectedPath[0] === subject
 //                 ? "border-b-4 border-purple-500 text-purple-500"
 //                 : darkMode
 //                 ? "hover:text-purple-400 text-gray-300"
 //                 : "hover:text-purple-600 text-gray-700"
 //             }`}
 //             onClick={() => {
-//               setSelectedSubject(subject);
-//               setSelectedTopic(null);
+//               setSelectedPath([subject]);
+//               setOpenNodes(new Set([subject]));
+//               setSidebarVisible(true);
 //             }}
 //           >
 //             {subject}
@@ -134,83 +114,78 @@
 //         ))}
 //       </div>
 
-//       <div className="flex flex-1 h-[calc(100vh-4rem)]">
+//       <div className="flex flex-1 h-[calc(100vh-4rem)] relative overflow-hidden">
 //         {/* Sidebar */}
-//         {selectedSubject && (
+//         {selectedPath.length > 0 && (
 //           <div
-//             className={`w-64 border-r p-4 overflow-y-auto shadow-inner ${
+//             className={`absolute top-0 left-0 h-full w-72 border-r p-4 overflow-y-auto transform transition-transform duration-300 ease-in-out z-30
+//             ${
+//               sidebarVisible ? "translate-x-0" : "-translate-x-full"
+//             }
+//             ${
 //               darkMode
 //                 ? "border-gray-700 bg-[#0a0f1a]"
 //                 : "border-gray-300 bg-gray-50"
 //             }`}
+//             style={{ maxHeight: "calc(100vh - 4rem)" }}
 //           >
-//             <ul className="space-y-2">
-//               {notesData[selectedSubject].map((note, idx) => (
-//                 <li key={idx}>
-//                   <button
-//                     className={`w-full text-left px-3 py-2 rounded-xl font-medium transition-all duration-200 ${
-//                       selectedTopic === idx
-//                         ? "bg-purple-500 text-white shadow-md"
-//                         : darkMode
-//                         ? "hover:bg-gray-800 text-gray-300"
-//                         : "hover:bg-gray-200 text-gray-700"
-//                     }`}
-//                     onClick={() => setSelectedTopic(idx)}
-//                   >
-//                     {note.topic}
-//                   </button>
-//                 </li>
-//               ))}
-//             </ul>
+//             {renderTree(notesData[selectedPath[0]], [selectedPath[0]])}
 //           </div>
 //         )}
 
+//         {/* Overlay (mobile only) */}
+//         {sidebarVisible && selectedPath.length > 0 && (
+//           <div
+//             className="fixed inset-0 bg-black bg-opacity-40 z-20 lg:hidden"
+//             onClick={() => setSidebarVisible(false)}
+//           />
+//         )}
+
 //         {/* Content Viewer */}
-//         <div className="flex-1 p-8 overflow-y-auto">
-//           {selectedTopic !== null ? (
+//         <div
+//           className={`flex-1 p-6 overflow-y-auto transition-all duration-300 ${
+//             sidebarVisible && selectedPath.length > 0 ? "lg:ml-72" : "ml-0"
+//           }`}
+//           style={{ maxHeight: "calc(100vh - 4rem)" }}
+//         >
+//           {content ? (
 //             <div
-//               className={`transition-all duration-300 ${
+//               className={`${
 //                 darkMode ? "prose prose-invert max-w-none" : "prose max-w-none"
 //               }`}
 //             >
-//               <ReactMarkdown
-//                 components={{
-//                   h1: ({ node, ...props }) => (
-//                     <h1
-//                       className="text-purple-500 mb-6 font-bold text-3xl"
-//                       {...props}
-//                     />
-//                   ),
-//                   h2: ({ node, ...props }) => (
-//                     <h2
-//                       className="text-purple-400 mb-4 font-semibold text-2xl"
-//                       {...props}
-//                     />
-//                   ),
-//                   p: ({ node, ...props }) => (
-//                     <p className="mb-4 leading-relaxed" {...props} />
-//                   ),
-//                   ul: ({ node, ...props }) => (
-//                     <ul className="list-disc ml-6 mb-4 space-y-1" {...props} />
-//                   ),
-//                   li: ({ node, ...props }) => (
-//                     <li className="leading-relaxed" {...props} />
-//                   ),
-//                 }}
-//               >
-//                 {notesData[selectedSubject][selectedTopic].content}
-//               </ReactMarkdown>
+//               <ReactMarkdown>{content}</ReactMarkdown>
 //             </div>
 //           ) : (
 //             <div className="h-full flex items-center justify-center">
 //               <p className="opacity-70 text-lg italic">
-//                 {selectedSubject
-//                   ? "✨ Select a topic to explore the notes."
+//                 {selectedPath.length > 0
+//                   ? "📖 Select a subtopic to view notes."
 //                   : "📚 Select a subject to begin."}
 //               </p>
 //             </div>
 //           )}
 //         </div>
+
+//         {/* Toggle Button pinned at boundary */}
+//         {selectedPath.length > 0 && (
+//           <button
+//             onClick={() => setSidebarVisible(!sidebarVisible)}
+//             className={`absolute top-0 transform -translate-y-1/2 z-40 p-2 rounded-r-lg shadow-md transition-colors
+//               ${darkMode ? "bg-purple-600 text-white" : "bg-purple-500 text-white"}
+//               `}
+//             style={{
+//               left: sidebarVisible ? "18rem" : "0rem", // align with sidebar width
+//               marginTop: "2.5rem", // tangent with subject navbar
+//             }}
+//           >
+//             {sidebarVisible ? (
+//               <PanelLeftClose size={18} />
+//             ) : (
+//               <PanelLeftOpen size={18} />
+//             )}
+//           </button>
+//         )}
 //       </div>
 //     </div>
 //   );
@@ -219,15 +194,25 @@
 // export default Notes;
 
 
-// src/components/Notes.jsx
+
+
+
+
+
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { notesData } from "../constants/public_notes";
-import { ChevronRight, ChevronDown } from "lucide-react"; // nice arrows
+import {
+  ChevronRight,
+  ChevronDown,
+  PanelLeftClose,
+  PanelLeftOpen,
+} from "lucide-react";
 
 const Notes = ({ darkMode }) => {
   const [selectedPath, setSelectedPath] = useState([]);
   const [openNodes, setOpenNodes] = useState(new Set());
+  const [sidebarVisible, setSidebarVisible] = useState(true);
 
   const getContentAtPath = (path) => {
     let node = notesData;
@@ -245,62 +230,59 @@ const Notes = ({ darkMode }) => {
   };
 
   // Recursive tree renderer
-  const renderTree = (node, path = []) => {
-    return (
-      <ul className="ml-2 space-y-1">
-        {Object.keys(node).map((key) => {
-          const newPath = [...path, key];
-          const isLeaf = node[key]?.content !== undefined;
-          const pathKey = newPath.join(">");
-          const isOpen = openNodes.has(pathKey);
+  const renderTree = (node, path = []) => (
+    <ul className="ml-2 space-y-1">
+      {Object.keys(node).map((key) => {
+        const newPath = [...path, key];
+        const isLeaf = node[key]?.content !== undefined;
+        const pathKey = newPath.join(">");
+        const isOpen = openNodes.has(pathKey);
 
-          return (
-            <li key={pathKey}>
-              <div className="flex items-center">
-                {!isLeaf && (
-                  <button
-                    onClick={() => toggleNode(pathKey)}
-                    className="mr-1 text-xs"
-                  >
-                    {isOpen ? (
-                      <ChevronDown size={16} />
-                    ) : (
-                      <ChevronRight size={16} />
-                    )}
-                  </button>
-                )}
-
+        return (
+          <li key={pathKey}>
+            <div className="flex items-center">
+              {!isLeaf && (
                 <button
-                  className={`flex-1 text-left px-2 py-1 rounded transition-colors ${
-                    JSON.stringify(selectedPath) === JSON.stringify(newPath)
-                      ? "bg-purple-500 text-white"
-                      : darkMode
-                      ? "hover:bg-gray-700 text-gray-300"
-                      : "hover:bg-gray-200 text-gray-700"
-                  }`}
-                  onClick={() => {
-                    if (isLeaf) setSelectedPath(newPath);
-                    else toggleNode(pathKey);
-                  }}
+                  onClick={() => toggleNode(pathKey)}
+                  className="mr-1 text-xs"
                 >
-                  {key}
+                  {isOpen ? (
+                    <ChevronDown size={16} />
+                  ) : (
+                    <ChevronRight size={16} />
+                  )}
                 </button>
-              </div>
+              )}
 
-              {/* Render children only if open */}
-              {!isLeaf && isOpen && renderTree(node[key], newPath)}
-            </li>
-          );
-        })}
-      </ul>
-    );
-  };
+              <button
+                className={`flex-1 text-left px-2 py-1 rounded transition-colors ${
+                  JSON.stringify(selectedPath) === JSON.stringify(newPath)
+                    ? "bg-purple-500 text-white"
+                    : darkMode
+                    ? "hover:bg-gray-700 text-gray-300"
+                    : "hover:bg-gray-200 text-gray-700"
+                }`}
+                onClick={() => {
+                  if (isLeaf) setSelectedPath(newPath);
+                  else toggleNode(pathKey);
+                }}
+              >
+                {key}
+              </button>
+            </div>
+
+            {!isLeaf && isOpen && renderTree(node[key], newPath)}
+          </li>
+        );
+      })}
+    </ul>
+  );
 
   const content = getContentAtPath(selectedPath);
 
   return (
     <div
-      className={`min-h-screen pt-16 ${
+      className={`min-h-screen pt-16 relative flex flex-col ${
         darkMode ? "bg-[#050816] text-white" : "bg-gray-50 text-gray-900"
       }`}
     >
@@ -324,7 +306,8 @@ const Notes = ({ darkMode }) => {
             }`}
             onClick={() => {
               setSelectedPath([subject]);
-              setOpenNodes(new Set([subject])); // auto-open selected subject
+              setOpenNodes(new Set([subject]));
+              setSidebarVisible(true);
             }}
           >
             {subject}
@@ -332,22 +315,42 @@ const Notes = ({ darkMode }) => {
         ))}
       </div>
 
-      <div className="flex flex-1 h-[calc(100vh-4rem)]">
+      <div className="flex flex-1 h-[calc(100vh-4rem)] relative overflow-hidden">
         {/* Sidebar */}
         {selectedPath.length > 0 && (
           <div
-            className={`w-72 border-r p-4 overflow-y-auto ${
+            className={`absolute top-0 left-0 h-full w-72 border-r p-4 overflow-y-auto transform transition-transform duration-300 ease-in-out z-30
+            ${
+              sidebarVisible ? "translate-x-0" : "-translate-x-full"
+            }
+            ${
               darkMode
                 ? "border-gray-700 bg-[#0a0f1a]"
                 : "border-gray-300 bg-gray-50"
             }`}
+            style={{ maxHeight: "calc(100vh - 4rem)" }}
           >
             {renderTree(notesData[selectedPath[0]], [selectedPath[0]])}
           </div>
         )}
 
+        {/* Overlay (mobile only) */}
+        {sidebarVisible && selectedPath.length > 0 && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-40 z-20 lg:hidden"
+            onClick={() => setSidebarVisible(false)}
+          />
+        )}
+
         {/* Content Viewer */}
-        <div className="flex-1 p-6 overflow-y-auto">
+        <div
+          className={`flex-1 p-6 overflow-y-auto transition-all duration-300 
+            ${sidebarVisible && selectedPath.length > 0 ? "lg:ml-72" : "ml-0"} 
+            ${darkMode ? "border-l border-gray-700" : "border-l border-gray-300"}
+            rounded-tl-lg rounded-bl-lg
+          `}
+          style={{ maxHeight: "calc(100vh - 4rem)" }}
+        >
           {content ? (
             <div
               className={`${
@@ -366,6 +369,25 @@ const Notes = ({ darkMode }) => {
             </div>
           )}
         </div>
+
+        {/* Toggle Button pinned at boundary */}
+        {selectedPath.length > 0 && (
+          <button
+            onClick={() => setSidebarVisible(!sidebarVisible)}
+            className={`absolute top-0 transform -translate-y-1/2 z-40 p-2 rounded-r-lg shadow-md transition-colors
+              ${darkMode ? "bg-purple-600 text-white" : "bg-purple-500 text-white"}`}
+            style={{
+              left: sidebarVisible ? "18rem" : "0rem", // align with sidebar width
+              marginTop: "2.5rem", // tangent with subject navbar
+            }}
+          >
+            {sidebarVisible ? (
+              <PanelLeftClose size={18} />
+            ) : (
+              <PanelLeftOpen size={18} />
+            )}
+          </button>
+        )}
       </div>
     </div>
   );
