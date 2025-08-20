@@ -1,41 +1,14 @@
-// // src/constants/public_notes.js
-// import HLD_Security_Contents from '../assets/PublicContent/HLD_Security_Contents.md?raw';
-
-
-// export const notesData = {
-//   High_Level_Design : [
-//     {
-//       topic: "Security",
-//       content: HLD_Security_Contents
-//     },
-//     {
-//       topic: "Consistency and ",
-//       content: HLD_Security_Contents
-//     }
-//   ],
-//   DummySubject: [
-//     {
-//       topic: "Topic Name1",
-//       content: HLD_Security_Contents
-//     },
-//     {
-//       topic: "topic Name2",
-//       content: HLD_Security_Contents
-//     }
-//   ],
-
-// };
-
-
-
-
 // src/constants/public_notes.js
-import HLD_Security_Contents from '../assets/PublicContent/HLD_Security_Contents.md?raw';
+import HLD_Security_Contents from '../assets/PublicContent/HLD/Security/1.Contents.md?raw';
+import HLD_Security_Foundations_of_Security from '../assets/PublicContent/HLD/Security/2.Foundations of Security.md?raw';
+import HLD_Security_Security_in_System_Design from '../assets/PublicContent/HLD/Security/3.Security in System Design.md?raw';
 
 export const notesData = {
   "High Level Design": {
     "Security": {
       "Syllabus": { content: HLD_Security_Contents },
+      "Foundations of Security": { content: HLD_Security_Foundations_of_Security },
+      "Security in System Design": { content: HLD_Security_Security_in_System_Design },
     },
 
   },
