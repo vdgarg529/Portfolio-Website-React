@@ -1,8 +1,8 @@
 import NICIcon from '../assets/NIC.png';
 import SPSIcon from '../assets/sps.png';
 import MBIcon from '../assets/MagnetBrains.png';
-import PersiIcon from '../assets/Persistent.webp';
-import DSPIcon from '../assets/sps.png';
+import PersiIcon from '../assets/Persistent.png';
+import DSPIcon from '../assets/disskover.jpeg';
 import IIITIcon from '../assets/IIITA.jpg';
 import UITIcon from '../assets/UIT,RGPV.jpg';
 import GGIAIcon from '../assets/GyanGanga.jpg';
@@ -62,7 +62,7 @@ export const experiences = [
   {
     title: "Maths/Physics Faculty",
     company_name: "Disskover Study Point",
-    icon: "https://via.placeholder.com/50",
+    icon: DSPIcon,
     date: "August 2016 - April 2023",
     points: [
       "Board Member – Disskover Study Point – Provided strategic guidance for an education venture with a distinctive model of maintaining small batch sizes (8–15 students) to maximize individual attention and accelerate learning outcomes",
