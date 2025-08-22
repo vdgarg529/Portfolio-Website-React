@@ -1,12 +1,12 @@
-import NICIcon from '../assets/NIC.png';
-import SPSIcon from '../assets/sps.png';
-import MBIcon from '../assets/MagnetBrains.png';
-import PersiIcon from '../assets/Persistent.png';
-import DSPIcon from '../assets/disskover.jpeg';
-import IIITIcon from '../assets/IIITA.jpg';
-import UITIcon from '../assets/UIT,RGPV.jpg';
-import GGIAIcon from '../assets/GyanGanga.jpg';
-import RYANIcon from '../assets/Ryan.jpeg';
+import NICIcon from '../assets/Profile/NIC.png';
+import SPSIcon from '../assets/Profile/sps.png';
+import MBIcon from '../assets/Profile/MagnetBrains.png';
+import PersiIcon from '../assets/Profile/Persistent.png';
+import DSPIcon from '../assets/Profile/disskover.jpeg';
+import IIITIcon from '../assets/Profile/IIITA.jpg';
+import UITIcon from '../assets/Profile/UIT,RGPV.jpg';
+import GGIAIcon from '../assets/Profile/GyanGanga.jpg';
+import RYANIcon from '../assets/Profile/Ryan.jpeg';
 
 
 

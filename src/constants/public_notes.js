@@ -7,6 +7,8 @@ import HLD_Load_Balancing_Contents from '../assets/PublicContent/HLD/Load_Balanc
 
 import HLD_Message_Queues_Contents from '../assets/PublicContent/HLD/Message_Queues/1.Contents.md?raw';
 
+import HLD_Caching_Contents from '../assets/PublicContent/HLD/Caching/1.Contents.md?raw';
+
 export const notesData = {
   "High Level Design": {
     "1. Security": {
@@ -19,6 +21,9 @@ export const notesData = {
     },
     "3. Message Queues": {
       "3.1. Syllabus": { content: HLD_Message_Queues_Contents },
+    },
+    "4. Caching": {
+      "4.1. Syllabus": { content: HLD_Caching_Contents },
     },
 
   },

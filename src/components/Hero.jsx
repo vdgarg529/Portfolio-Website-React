@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiDownload, HiMail } from 'react-icons/hi';
-import profilePic from '../assets/profile.jpg';
+import profilePic from '../assets/Profile/profile.jpg';
 import resumeDownload from '../assets/Resume.pdf';
 
 const qualities = [

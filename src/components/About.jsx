@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import aboutPic from '../assets/about.jpg';
+import aboutPic from '../assets/Profile/about.jpg';
 
 const About = ({ darkMode }) => {
   // Common colors
