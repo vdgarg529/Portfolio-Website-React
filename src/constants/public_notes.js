@@ -9,6 +9,19 @@ import HLD_Message_Queues_Contents from '../assets/PublicContent/HLD/Message_Que
 
 import HLD_Caching_Contents from '../assets/PublicContent/HLD/Caching/1.Contents.md?raw';
 
+
+
+import project_aiNotes_td from '../assets/PublicContent/Project/1.aiNotes/1.Technical_Document.md?raw';
+import project_aiNotes_techstack from '../assets/PublicContent/Project/1.aiNotes/2.Tech_Stack_Justification.md?raw';
+import project_aiNotes_linebyline from '../assets/PublicContent/Project/1.aiNotes/3.Line_By_Line_Code_Explanation.md?raw';
+import project_aiNotes_ques from '../assets/PublicContent/Project/1.aiNotes/4.100_Potential_Questions.md?raw';
+
+
+
+import DBMS_Questions from '../assets/PublicContent/DBMS/00.Questions/Questions.md?raw';
+
+
+
 export const notesData = {
   "High Level Design": {
     "1. Security": {
@@ -28,12 +41,21 @@ export const notesData = {
 
   },
 
-  "Dummy Subject": {
-    "Topic Name 1": { content: HLD_Security_Contents },
-    "Topic Name 2": {
-      "Deep Subtopic": {
-        "Example": { content: HLD_Security_Contents },
-      },
+  "Project": {
+    "1. Note Mgmt": {
+      "1.1. Technical Document": { content: project_aiNotes_td},
+      "1.2. Tech Stack Justification": { content: project_aiNotes_techstack },
+      "1.3. Line By Line Explaination": { content: project_aiNotes_linebyline },
+      "1.4. Potential Questions": { content: project_aiNotes_ques },
+    },
+    "2. VLC": {
+      "2.1. Syllabus": { content: "Coming Soon" },
     },
   },
+
+  "DBMS": {
+    "1. Top 100 Questions": { content: DBMS_Questions},
+  },
+
+
 };
