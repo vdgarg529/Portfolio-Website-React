@@ -19,7 +19,10 @@ import project_aiNotes_ques from '../assets/PublicContent/Project/1.aiNotes/4.10
 
 
 import DBMS_Questions from '../assets/PublicContent/DBMS/00.Questions/Questions.md?raw';
-
+import DBMS_Syllabus from '../assets/PublicContent/DBMS/Syllabus.md?raw';
+import DBMS_Intro from '../assets/PublicContent/DBMS/1.Introduction/Introduction.md?raw';
+import DBMS_Architecture from '../assets/PublicContent/DBMS/1.Introduction/Architecture.md?raw';
+import DBMS_Relational_Schema from '../assets/PublicContent/DBMS/1.Introduction/Relational_Schema.md?raw';
 
 
 export const notesData = {
@@ -54,7 +57,14 @@ export const notesData = {
   },
 
   "DBMS": {
-    "1. Top 100 Questions": { content: DBMS_Questions},
+    "1. Syllabus": { content: DBMS_Syllabus},
+    "2. Top 100 Questions": { content: DBMS_Questions},
+    "3. Introduction": {
+      "1.1. Keywords": { content: DBMS_Intro},
+      "1.2. Architecture": { content: DBMS_Architecture},
+      "1.3. Relational Schema": { content: DBMS_Relational_Schema},
+    },
+    
   },
 
 
