@@ -23,7 +23,7 @@ import DBMS_Syllabus from '../assets/PublicContent/DBMS/Syllabus.md?raw';
 import DBMS_Intro from '../assets/PublicContent/DBMS/1.Introduction/Introduction.md?raw';
 import DBMS_Architecture from '../assets/PublicContent/DBMS/1.Introduction/Architecture.md?raw';
 import DBMS_Relational_Schema from '../assets/PublicContent/DBMS/1.Introduction/Relational_Schema.md?raw';
-
+import DBMS_fds from '../assets/PublicContent/DBMS/2. Functional_Dependecies_and_Normalization/FDs.md?raw';
 
 export const notesData = {
   "High Level Design": {
@@ -60,10 +60,16 @@ export const notesData = {
     "1. Syllabus": { content: DBMS_Syllabus},
     "2. Top 100 Questions": { content: DBMS_Questions},
     "3. Introduction": {
-      "1.1. Keywords": { content: DBMS_Intro},
-      "1.2. Architecture": { content: DBMS_Architecture},
-      "1.3. Relational Schema": { content: DBMS_Relational_Schema},
+      "3.1. Keywords": { content: DBMS_Intro},
+      "3.2. Architecture": { content: DBMS_Architecture},
+      "3.3. Relational Schema": { content: DBMS_Relational_Schema},
     },
+    "4. Fds & Normalization": {
+      "4.1. Fds": { content: DBMS_fds},
+      "4.2. Normalization": { content: "Coming Soon"},
+
+    },
+    
     
   },
 

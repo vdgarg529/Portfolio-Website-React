@@ -1,5 +1,7 @@
+// // src/components/Notes.jsx
 // import { useState } from "react";
 // import ReactMarkdown from "react-markdown";
+// import remarkGfm from "remark-gfm";
 // import { notesData } from "../constants/public_notes";
 // import {
 //   ChevronRight,
@@ -7,6 +9,40 @@
 //   PanelLeftClose,
 //   PanelLeftOpen,
 // } from "lucide-react";
+
+// // 🔹 Import all images from /images folder
+// const images = import.meta.glob("/src/assets/PublicContent/images/*", {
+//   eager: true,
+// });
+
+// // Resolve image path by filename (handles spaces + multiple extensions)
+// function resolveImagePath(name) {
+//   const base = name.trim();
+
+//   const candidates = [
+//     base,
+//     base + ".png",
+//     base + ".jpg",
+//     base + ".jpeg",
+//     base + ".svg",
+//     base.replace(/ /g, "%20") + ".png", // if vite encodes spaces
+//     base.replace(/ /g, "_") + ".png",   // if you rename later with _
+//   ];
+
+//   for (let candidate of candidates) {
+//     const match = Object.keys(images).find((key) => key.includes(candidate));
+//     if (match) return images[match].default;
+//   }
+//   return null;
+// }
+
+// // Preprocess markdown: convert ![[filename]] → ![](resolvedPath)
+// function preprocessMarkdown(md) {
+//   return md.replace(/!\[\[(.*?)\]\]/g, (_, filename) => {
+//     const src = resolveImagePath(filename.trim());
+//     return src ? `![](${src})` : `⚠️ Missing image: ${filename}`;
+//   });
+// }
 
 // const Notes = ({ darkMode }) => {
 //   const [selectedPath, setSelectedPath] = useState([]);
@@ -78,6 +114,7 @@
 //   );
 
 //   const content = getContentAtPath(selectedPath);
+//   const processedContent = content ? preprocessMarkdown(content) : "";
 
 //   return (
 //     <div
@@ -119,9 +156,7 @@
 //         {selectedPath.length > 0 && (
 //           <div
 //             className={`absolute top-0 left-0 h-full w-72 border-r p-4 overflow-y-auto transform transition-transform duration-300 ease-in-out z-30
-//             ${
-//               sidebarVisible ? "translate-x-0" : "-translate-x-full"
-//             }
+//             ${sidebarVisible ? "translate-x-0" : "-translate-x-full"}
 //             ${
 //               darkMode
 //                 ? "border-gray-700 bg-[#0a0f1a]"
@@ -143,18 +178,34 @@
 
 //         {/* Content Viewer */}
 //         <div
-//           className={`flex-1 p-6 overflow-y-auto transition-all duration-300 ${
-//             sidebarVisible && selectedPath.length > 0 ? "lg:ml-72" : "ml-0"
-//           }`}
+//           className={`flex-1 p-6 overflow-y-auto transition-all duration-300 
+//             ${sidebarVisible && selectedPath.length > 0 ? "lg:ml-72" : "ml-0"} 
+//             ${darkMode ? "border-l border-gray-700" : "border-l border-gray-300"}
+//             rounded-tl-lg rounded-bl-lg
+//           `}
 //           style={{ maxHeight: "calc(100vh - 4rem)" }}
 //         >
-//           {content ? (
+//           {processedContent ? (
 //             <div
 //               className={`${
 //                 darkMode ? "prose prose-invert max-w-none" : "prose max-w-none"
 //               }`}
 //             >
-//               <ReactMarkdown>{content}</ReactMarkdown>
+//               <ReactMarkdown
+//                 remarkPlugins={[remarkGfm]}
+//                 components={{
+//                   img: (props) => (
+//                     <img
+//                       {...props}
+//                       className="rounded-lg mx-auto my-4 shadow-md"
+//                       style={{ maxWidth: "100%", height: "auto" }}
+//                       alt={props.alt}
+//                     />
+//                   ),
+//                 }}
+//               >
+//                 {processedContent}
+//               </ReactMarkdown>
 //             </div>
 //           ) : (
 //             <div className="h-full flex items-center justify-center">
@@ -172,11 +223,10 @@
 //           <button
 //             onClick={() => setSidebarVisible(!sidebarVisible)}
 //             className={`absolute top-0 transform -translate-y-1/2 z-40 p-2 rounded-r-lg shadow-md transition-colors
-//               ${darkMode ? "bg-purple-600 text-white" : "bg-purple-500 text-white"}
-//               `}
+//               ${darkMode ? "bg-purple-600 text-white" : "bg-purple-500 text-white"}`}
 //             style={{
-//               left: sidebarVisible ? "18rem" : "0rem", // align with sidebar width
-//               marginTop: "2.5rem", // tangent with subject navbar
+//               left: sidebarVisible ? "18rem" : "0rem",
+//               marginTop: "2.5rem",
 //             }}
 //           >
 //             {sidebarVisible ? (
@@ -195,12 +245,10 @@
 
 
 
-
-
-
-
+// src/components/Notes.jsx
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { notesData } from "../constants/public_notes";
 import {
   ChevronRight,
@@ -208,6 +256,40 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
 } from "lucide-react";
+
+// 🔹 Import all images from /images folder
+const images = import.meta.glob("/src/assets/PublicContent/images/*", {
+  eager: true,
+});
+
+// Resolve image path by filename (handles spaces + multiple extensions)
+function resolveImagePath(name) {
+  const base = name.trim();
+
+  const candidates = [
+    base,
+    base + ".png",
+    base + ".jpg",
+    base + ".jpeg",
+    base + ".svg",
+    base.replace(/ /g, "%20") + ".png", // if vite encodes spaces
+    base.replace(/ /g, "_") + ".png", // if renamed with underscores
+  ];
+
+  for (let candidate of candidates) {
+    const match = Object.keys(images).find((key) => key.includes(candidate));
+    if (match) return images[match].default;
+  }
+  return null;
+}
+
+// Preprocess markdown: convert ![[filename]] → ![](resolvedPath)
+function preprocessMarkdown(md) {
+  return md.replace(/!\[\[(.*?)\]\]/g, (_, filename) => {
+    const src = resolveImagePath(filename.trim());
+    return src ? `![](${src})` : `⚠️ Missing image: ${filename}`;
+  });
+}
 
 const Notes = ({ darkMode }) => {
   const [selectedPath, setSelectedPath] = useState([]);
@@ -279,6 +361,7 @@ const Notes = ({ darkMode }) => {
   );
 
   const content = getContentAtPath(selectedPath);
+  const processedContent = content ? preprocessMarkdown(content) : "";
 
   return (
     <div
@@ -315,49 +398,72 @@ const Notes = ({ darkMode }) => {
         ))}
       </div>
 
-      <div className="flex flex-1 h-[calc(100vh-4rem)] relative overflow-hidden">
+      {/* Main content area */}
+      <div className="flex flex-1 h-[calc(100vh-4rem)] overflow-hidden">
         {/* Sidebar */}
         {selectedPath.length > 0 && (
           <div
-            className={`absolute top-0 left-0 h-full w-72 border-r p-4 overflow-y-auto transform transition-transform duration-300 ease-in-out z-30
-            ${
-              sidebarVisible ? "translate-x-0" : "-translate-x-full"
-            }
-            ${
-              darkMode
-                ? "border-gray-700 bg-[#0a0f1a]"
-                : "border-gray-300 bg-gray-50"
-            }`}
+            className={`transition-all duration-300 ease-in-out
+              ${sidebarVisible ? "w-1/3 lg:w-1/4" : "w-0"}
+              ${
+                darkMode
+                  ? "bg-[#0a0f1a] border-r border-gray-700"
+                  : "bg-gray-50 border-r border-gray-300"
+              }
+              overflow-y-auto`}
             style={{ maxHeight: "calc(100vh - 4rem)" }}
           >
-            {renderTree(notesData[selectedPath[0]], [selectedPath[0]])}
+            {sidebarVisible &&
+              renderTree(notesData[selectedPath[0]], [selectedPath[0]])}
           </div>
         )}
 
-        {/* Overlay (mobile only) */}
-        {sidebarVisible && selectedPath.length > 0 && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-40 z-20 lg:hidden"
-            onClick={() => setSidebarVisible(false)}
-          />
+        {/* Toggle Button (inline, no overlap) */}
+        {selectedPath.length > 0 && (
+          <div className="flex items-start">
+            <button
+              onClick={() => setSidebarVisible(!sidebarVisible)}
+              className={`z-40 p-2 transition-colors rounded-r-lg shadow-md
+                ${darkMode ? "bg-purple-600 text-white" : "bg-purple-500 text-white"}`}
+              style={{ marginTop: "1rem" }}
+            >
+              {sidebarVisible ? (
+                <PanelLeftClose size={18} />
+              ) : (
+                <PanelLeftOpen size={18} />
+              )}
+            </button>
+          </div>
         )}
 
         {/* Content Viewer */}
         <div
-          className={`flex-1 p-6 overflow-y-auto transition-all duration-300 
-            ${sidebarVisible && selectedPath.length > 0 ? "lg:ml-72" : "ml-0"} 
+          className={`flex-1 p-6 overflow-y-auto transition-all duration-300
             ${darkMode ? "border-l border-gray-700" : "border-l border-gray-300"}
-            rounded-tl-lg rounded-bl-lg
-          `}
+            rounded-tl-lg rounded-bl-lg`}
           style={{ maxHeight: "calc(100vh - 4rem)" }}
         >
-          {content ? (
+          {processedContent ? (
             <div
               className={`${
                 darkMode ? "prose prose-invert max-w-none" : "prose max-w-none"
               }`}
             >
-              <ReactMarkdown>{content}</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  img: (props) => (
+                    <img
+                      {...props}
+                      className="rounded-lg mx-auto my-4 shadow-md"
+                      style={{ maxWidth: "100%", height: "auto" }}
+                      alt={props.alt}
+                    />
+                  ),
+                }}
+              >
+                {processedContent}
+              </ReactMarkdown>
             </div>
           ) : (
             <div className="h-full flex items-center justify-center">
@@ -369,28 +475,11 @@ const Notes = ({ darkMode }) => {
             </div>
           )}
         </div>
-
-        {/* Toggle Button pinned at boundary */}
-        {selectedPath.length > 0 && (
-          <button
-            onClick={() => setSidebarVisible(!sidebarVisible)}
-            className={`absolute top-0 transform -translate-y-1/2 z-40 p-2 rounded-r-lg shadow-md transition-colors
-              ${darkMode ? "bg-purple-600 text-white" : "bg-purple-500 text-white"}`}
-            style={{
-              left: sidebarVisible ? "18rem" : "0rem", // align with sidebar width
-              marginTop: "2.5rem", // tangent with subject navbar
-            }}
-          >
-            {sidebarVisible ? (
-              <PanelLeftClose size={18} />
-            ) : (
-              <PanelLeftOpen size={18} />
-            )}
-          </button>
-        )}
       </div>
     </div>
   );
 };
 
 export default Notes;
+
+
