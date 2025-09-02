@@ -24,6 +24,8 @@ import DBMS_Intro from '../assets/PublicContent/DBMS/1.Introduction/Introduction
 import DBMS_Architecture from '../assets/PublicContent/DBMS/1.Introduction/Architecture.md?raw';
 import DBMS_Relational_Schema from '../assets/PublicContent/DBMS/1.Introduction/Relational_Schema.md?raw';
 import DBMS_fds from '../assets/PublicContent/DBMS/2. Functional_Dependecies_and_Normalization/FDs.md?raw';
+import DBMS_superKeys from '../assets/PublicContent/DBMS/2. Functional_Dependecies_and_Normalization/No_of_Super_Keys.md?raw';
+import DBMS_decomposition from '../assets/PublicContent/DBMS/2. Functional_Dependecies_and_Normalization/Properties_Of_Decomposition.md?raw';
 
 export const notesData = {
   "High Level Design": {
@@ -66,7 +68,9 @@ export const notesData = {
     },
     "4. Fds & Normalization": {
       "4.1. Fds": { content: DBMS_fds},
-      "4.2. Normalization": { content: "Coming Soon"},
+      "4.2. Count Of Super Keys": { content: DBMS_superKeys},
+      "4.3. Decomposition": { content: DBMS_decomposition},
+      "4.4. Normalization": { content: "Coming Soon"},
 
     },
     
