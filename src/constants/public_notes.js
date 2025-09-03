@@ -2,11 +2,8 @@
 import HLD_Security_Contents from '../assets/PublicContent/HLD/Security/1.Contents.md?raw';
 import HLD_Security_Foundations_of_Security from '../assets/PublicContent/HLD/Security/2.Foundations of Security.md?raw';
 import HLD_Security_Security_in_System_Design from '../assets/PublicContent/HLD/Security/3.Security in System Design.md?raw';
-
 import HLD_Load_Balancing_Contents from '../assets/PublicContent/HLD/Load_Balancing/1.Contents.md?raw';
-
 import HLD_Message_Queues_Contents from '../assets/PublicContent/HLD/Message_Queues/1.Contents.md?raw';
-
 import HLD_Caching_Contents from '../assets/PublicContent/HLD/Caching/1.Contents.md?raw';
 
 
@@ -35,6 +32,10 @@ import DBMS_ProblemsConcurrency from '../assets/PublicContent/DBMS/3. Transactio
 import DBMS_Recoverability from '../assets/PublicContent/DBMS/3. Transaction_and_Concurrency_Control/Serializablity.md?raw';
 
 
+
+
+
+import Misc_tokenTypes from '../assets/PublicContent/Misc/Token_Transmission_Types.md?raw';
 
 
 
@@ -93,7 +94,9 @@ export const notesData = {
       "5.6. Recoverability": { content: DBMS_Recoverability},
 
     },
-    
+  },
+  "Misc": {
+    "1. Token Transmission Types": {content : Misc_tokenTypes},
   },
 
 
