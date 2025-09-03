@@ -26,6 +26,18 @@ import DBMS_Relational_Schema from '../assets/PublicContent/DBMS/1.Introduction/
 import DBMS_fds from '../assets/PublicContent/DBMS/2. Functional_Dependecies_and_Normalization/FDs.md?raw';
 import DBMS_superKeys from '../assets/PublicContent/DBMS/2. Functional_Dependecies_and_Normalization/No_of_Super_Keys.md?raw';
 import DBMS_decomposition from '../assets/PublicContent/DBMS/2. Functional_Dependecies_and_Normalization/Properties_Of_Decomposition.md?raw';
+import DBMS_normalization from '../assets/PublicContent/DBMS/2. Functional_Dependecies_and_Normalization/Normalization.md?raw';
+import DBMS_IntroACID from '../assets/PublicContent/DBMS/3. Transaction_and_Concurrency_Control/Intro_and_ACID.md?raw';
+import DBMS_schedules from '../assets/PublicContent/DBMS/3. Transaction_and_Concurrency_Control/Schedules.md?raw';
+import DBMS_serializability from '../assets/PublicContent/DBMS/3. Transaction_and_Concurrency_Control/Serializablity.md?raw';
+import DBMS_Noofschedules from '../assets/PublicContent/DBMS/3. Transaction_and_Concurrency_Control/No_of_Schedules.md?raw';
+import DBMS_ProblemsConcurrency from '../assets/PublicContent/DBMS/3. Transaction_and_Concurrency_Control/Problems_Concurrency.md?raw';
+import DBMS_Recoverability from '../assets/PublicContent/DBMS/3. Transaction_and_Concurrency_Control/Serializablity.md?raw';
+
+
+
+
+
 
 export const notesData = {
   "High Level Design": {
@@ -70,10 +82,17 @@ export const notesData = {
       "4.1. Fds": { content: DBMS_fds},
       "4.2. Count Of Super Keys": { content: DBMS_superKeys},
       "4.3. Decomposition": { content: DBMS_decomposition},
-      "4.4. Normalization": { content: "Coming Soon"},
+      "4.4. Normalization": { content: DBMS_normalization},
+    },
+    "5. ACID & Concurrency": {
+      "5.1. Introduction and ACID": { content: DBMS_IntroACID},
+      "5.2. Schedules": { content: DBMS_schedules},
+      "5.3. Serializability": { content: DBMS_serializability},
+      "5.4. No Of Schedules": { content: DBMS_Noofschedules},
+      "5.5. Problems with concurrency": { content: DBMS_ProblemsConcurrency},
+      "5.6. Recoverability": { content: DBMS_Recoverability},
 
     },
-    
     
   },
 
