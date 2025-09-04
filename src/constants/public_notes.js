@@ -40,6 +40,12 @@ import Misc_tokenTypes from '../assets/PublicContent/Misc/Token_Transmission_Typ
 
 
 
+import typeface_commented_code from '../assets/PublicContent/typeface-Finance_Assistant/1.Commented_Code_explanation.md?raw';
+import typeface_detailed_code from '../assets/PublicContent/typeface-Finance_Assistant/2.Detailed.md?raw';
+import typeface_questionsNextensions from '../assets/PublicContent/typeface-Finance_Assistant/3.Questions_and_Extensions.md?raw';
+import typeface_Extensions1 from '../assets/PublicContent/typeface-Finance_Assistant/4.Extension_Code.md?raw';
+import typeface_Extension0 from '../assets/PublicContent/typeface-Finance_Assistant/5.Interview_Friendly_Extensions.md?raw';
+
 export const notesData = {
   "High Level Design": {
     "1. Security": {
@@ -98,6 +104,12 @@ export const notesData = {
   "Misc": {
     "1. Token Transmission Types": {content : Misc_tokenTypes},
   },
-
+  "TypeFace-Finance_Assistant": {
+    "1. Commented code explain": {content : typeface_commented_code},
+    "2. Detailed code explain": {content : typeface_detailed_code},
+    "3. Question & Extension": {content : typeface_questionsNextensions},
+    "4. Extension 1": {content : typeface_Extension0},
+    "5. Extension 0": {content : typeface_Extensions1},
+  },
 
 };
