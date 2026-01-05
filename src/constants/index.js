@@ -10,6 +10,11 @@ import RYANIcon from '../assets/Profile/Ryan.jpeg';
 
 
 
+
+import ainotes from '../assets/projects/ainotes.png';
+import vlc_mediapipe from '../assets/projects/VLC-mediapipe.png';
+
+
 export const experiences = [
   {
     title: "Scientific Officer",
@@ -111,150 +116,56 @@ export const education = [
 ];
 
 export const projectGroups = [
-  {
-    groupName: "Computer Vision",
-    projects: [
       {
-        name: "E-Commerce Platform",
-        description: "Full-featured e-commerce solution with payment gateway and admin panel.",
-        tags: [
-          { name: "React", color: "bg-blue-500/20 text-blue-300" },
-          { name: "Node.js", color: "bg-green-500/20 text-green-300" },
-          { name: "MongoDB", color: "bg-emerald-500/20 text-emerald-300" },
-        ],
-        image: "https://via.placeholder.com/640x360",
-        source_code_link: "https://github.com/example/ecommerce",
-        hosted_link: "https://ecommerce.example.com",
-        readme: "This is a full-featured MERN stack e-commerce application with JWT auth, Stripe integration, and admin dashboard.",
+        groupName: "Natural Language Processing",
+        projects: [
+          {
+            name: "AI Note Mangement and Query",
+            description: "An AI enabled second brain to save and query notes on the basis of semantics search",
+            tags: [
+              { name: "FastAPI", color: "bg-yellow-500/20 text-yellow-300" },
+              { name: "React", color: "bg-yellow-500/20 text-yellow-300" },
+              { name: "JWT", color: "bg-gray-500/20 text-gray-300" },
+              { name: "SQLite", color: "bg-gray-500/20 text-gray-300" },
+              { name: "ChromaDB", color: "bg-gray-500/20 text-gray-300" },
+              { name: "Gemini API", color: "bg-gray-500/20 text-gray-300" },
+              { name: "Speech to Text", color: "bg-gray-500/20 text-gray-300" },
+            ],
+            image: ainotes,
+            source_code_link: "https://github.com/vdgarg529/notesMgmt-frontend",
+            hosted_link: "https://notesai-phi.vercel.app",
+            readme: " ★ Engineered a note-management backend with JWT authentication using algorithm HS256 (HMAC SHA-256) for token signing & verification, adaptive CRUD functionality\n\
+                      ★ Integrated advanced semantic search using all-MiniLM-L6-v2 embeddings & a vector database to retrieve notes with >60% cosine similarity from extensive user collections\n\
+                      ★ Implemented smart AI summarization via the Gemini Flash-2.5 model integrating features- intelligent note retrieval, automated content summarization & PDFexports\n"
+          },
+          // More projects...
+        ]
       },
-      // Add more projects in this group
-    ]
-  },
-  {
-    groupName: "Natural Language Processing",
-    projects: [
       {
-        name: "Tab Manager",
-        description: "Chrome extension to manage and group tabs efficiently.",
-        tags: [
-          { name: "JavaScript", color: "bg-yellow-500/20 text-yellow-300" },
-          { name: "Chrome API", color: "bg-gray-500/20 text-gray-300" },
-        ],
-        image: "https://via.placeholder.com/640x360",
-        source_code_link: "https://github.com/example/tab-manager",
-        hosted_link: "https://chrome.google.com/webstore/detail/tab-manager/id",
-        readme: "Easily organize, search, and group your Chrome tabs. Built using Manifest V3 and modern JS.",
-      },
-      // More projects...
-    ]
-  },
-  {
-    groupName: "Generative AI",
-    projects: [
-      {
-        name: "Tab Manager",
-        description: "Chrome extension to manage and group tabs efficiently.",
-        tags: [
-          { name: "JavaScript", color: "bg-yellow-500/20 text-yellow-300" },
-          { name: "Chrome API", color: "bg-gray-500/20 text-gray-300" },
-        ],
-        image: "https://via.placeholder.com/640x360",
-        source_code_link: "https://github.com/example/tab-manager",
-        hosted_link: "https://chrome.google.com/webstore/detail/tab-manager/id",
-        readme: "Easily organize, search, and group your Chrome tabs. Built using Manifest V3 and modern JS.",
-      },
-      // More projects...
-    ]
-  },
-  {
-    groupName: "Agentic AI",
-    projects: [
-      {
-        name: "Tab Manager",
-        description: "Chrome extension to manage and group tabs efficiently.",
-        tags: [
-          { name: "JavaScript", color: "bg-yellow-500/20 text-yellow-300" },
-          { name: "Chrome API", color: "bg-gray-500/20 text-gray-300" },
-        ],
-        image: "https://via.placeholder.com/640x360",
-        source_code_link: "https://github.com/example/tab-manager",
-        hosted_link: "https://chrome.google.com/webstore/detail/tab-manager/id",
-        readme: "Easily organize, search, and group your Chrome tabs. Built using Manifest V3 and modern JS.",
-      },
-      // More projects...
-    ]
-  },
-  {
-    groupName: "Reinforcement Learning",
-    projects: [
-      {
-        name: "Tab Manager",
-        description: "Chrome extension to manage and group tabs efficiently.",
-        tags: [
-          { name: "JavaScript", color: "bg-yellow-500/20 text-yellow-300" },
-          { name: "Chrome API", color: "bg-gray-500/20 text-gray-300" },
-        ],
-        image: "https://via.placeholder.com/640x360",
-        source_code_link: "https://github.com/example/tab-manager",
-        hosted_link: "https://chrome.google.com/webstore/detail/tab-manager/id",
-        readme: "Easily organize, search, and group your Chrome tabs. Built using Manifest V3 and modern JS.",
-      },
-      // More projects...
-    ]
-  },
-  {
-    groupName: "Machine Learning",
-    projects: [
-      {
-        name: "Tab Manager",
-        description: "Chrome extension to manage and group tabs efficiently.",
-        tags: [
-          { name: "JavaScript", color: "bg-yellow-500/20 text-yellow-300" },
-          { name: "Chrome API", color: "bg-gray-500/20 text-gray-300" },
-        ],
-        image: "https://via.placeholder.com/640x360",
-        source_code_link: "https://github.com/example/tab-manager",
-        hosted_link: "https://chrome.google.com/webstore/detail/tab-manager/id",
-        readme: "Easily organize, search, and group your Chrome tabs. Built using Manifest V3 and modern JS.",
-      },
-      // More projects...
-    ]
-  },
-  {
-    groupName: "Games",
-    projects: [
-      {
-        name: "Tab Manager",
-        description: "Chrome extension to manage and group tabs efficiently.",
-        tags: [
-          { name: "JavaScript", color: "bg-yellow-500/20 text-yellow-300" },
-          { name: "Chrome API", color: "bg-gray-500/20 text-gray-300" },
-        ],
-        image: "https://via.placeholder.com/640x360",
-        source_code_link: "https://github.com/example/tab-manager",
-        hosted_link: "https://chrome.google.com/webstore/detail/tab-manager/id",
-        readme: "Easily organize, search, and group your Chrome tabs. Built using Manifest V3 and modern JS.",
-      },
-      // More projects...
-    ]
-  },
-  {
-    groupName: "Tools",
-    projects: [
-      {
-        name: "Tab Manager",
-        description: "Chrome extension to manage and group tabs efficiently.",
-        tags: [
-          { name: "JavaScript", color: "bg-yellow-500/20 text-yellow-300" },
-          { name: "Chrome API", color: "bg-gray-500/20 text-gray-300" },
-        ],
-        image: "https://via.placeholder.com/640x360",
-        source_code_link: "https://github.com/example/tab-manager",
-        hosted_link: "https://chrome.google.com/webstore/detail/tab-manager/id",
-        readme: "Easily organize, search, and group your Chrome tabs. Built using Manifest V3 and modern JS.",
-      },
-      // More projects...
-    ]
-  },
-  // Add more groups freely
+        groupName: "Computer Vision",
+        projects: [
+          {
+            name: "VLC Gesture Controlled",
+            description: "Now control VLC Media Player using the hand gestures using this software",
+            tags: [
+              { name: " PyTorch", color: "bg-yellow-500/20 text-yellow-300" },
+              { name: "MediaPipe", color: "bg-yellow-500/20 text-yellow-300" },
+              { name: "scikit-learn", color: "bg-gray-500/20 text-gray-300" },
+              { name: "SQLite", color: "bg-gray-500/20 text-gray-300" },
+              { name: "OpenCV", color: "bg-gray-500/20 text-gray-300" },
+              { name: "VLC HTTP API", color: "bg-yellow-500/20 text-yellow-300" },
+              { name: "psutil", color: "bg-gray-500/20 text-gray-300" },
+              { name: "pyautogui", color: "bg-gray-500/20 text-gray-300" },
+               
+            ],
+            image: vlc_mediapipe,
+            source_code_link: "https://github.com/vdgarg529/VLC-Hand_Gesture",
+            readme: " ★ Developed a gesture-controlled VLC player by utilizing 21×3 hand landmarks processed through an MLP (2×128, ReLU, Adam) integrated with VLC HTTP or keyboard APIs\n\
+                      ★ Built a 6K-sample, 5-class gesture dataset with augmentation (rotation, scaling,Gaussian noise), achieving 99.1% accuracy, precision, recall & F1 score with a 4:1 split\n\
+                      ★ Implemented real-time gesture recognition engine with webcam input, state-based gesture-to-command mapping & VLC supervisor ensuring smooth, low-latency control\
+                      "
+          },
+          // More projects...
+        ]
+      }
 ];

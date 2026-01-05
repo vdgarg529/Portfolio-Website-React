@@ -2,6 +2,9 @@
 import { projectGroups } from '../constants';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaGithub } from "react-icons/fa";
+import { HiOutlineExternalLink } from "react-icons/hi";
+
 
 const ProjectCard = ({ project, index, onReadMore }) => (
   <motion.div
@@ -20,18 +23,25 @@ const ProjectCard = ({ project, index, onReadMore }) => (
       <div className="absolute bottom-4 left-4">
         <h3 className="text-white font-bold text-xl">{project.name}</h3>
       </div>
-      <div 
+
+    <div className="absolute top-4 right-4 flex gap-1">
+      <div
         onClick={() => window.open(project.source_code_link, "_blank")}
-        className="absolute top-4 right-14 bg-black/50 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/70"
+        className="bg-black/50 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/70"
       >
-        <i className="devicon-github-original text-white text-lg" />
+        <FaGithub className="text-white text-2xl" />
       </div>
-      <div 
-        onClick={() => window.open(project.hosted_link, "_blank")}
-        className="absolute top-4 right-4 bg-black/50 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/70"
-      >
-        🌐
-      </div>
+
+      {project.hosted_link && (
+        <div
+          onClick={() => window.open(project.hosted_link, "_blank")}
+          className="bg-black/50 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/70"
+        >
+          <HiOutlineExternalLink className="text-white text-2xl" />
+        </div>
+      )}
+    </div>
+
     </div>
     <div className="p-6">
       <p className="text-white-100 mb-4">{project.description}</p>

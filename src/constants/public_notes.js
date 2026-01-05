@@ -7,14 +7,6 @@ import HLD_Message_Queues_Contents from '../assets/PublicContent/HLD/Message_Que
 import HLD_Caching_Contents from '../assets/PublicContent/HLD/Caching/1.Contents.md?raw';
 
 
-
-import project_aiNotes_td from '../assets/PublicContent/Project/1.aiNotes/1.Technical_Document.md?raw';
-import project_aiNotes_techstack from '../assets/PublicContent/Project/1.aiNotes/2.Tech_Stack_Justification.md?raw';
-import project_aiNotes_linebyline from '../assets/PublicContent/Project/1.aiNotes/3.Line_By_Line_Code_Explanation.md?raw';
-import project_aiNotes_ques from '../assets/PublicContent/Project/1.aiNotes/4.100_Potential_Questions.md?raw';
-
-
-
 import DBMS_Questions from '../assets/PublicContent/DBMS/00.Questions/Questions.md?raw';
 import DBMS_Syllabus from '../assets/PublicContent/DBMS/Syllabus.md?raw';
 import DBMS_Intro from '../assets/PublicContent/DBMS/1.Introduction/Introduction.md?raw';
@@ -32,10 +24,30 @@ import DBMS_ProblemsConcurrency from '../assets/PublicContent/DBMS/3. Transactio
 import DBMS_Recoverability from '../assets/PublicContent/DBMS/3. Transaction_and_Concurrency_Control/Serializablity.md?raw';
 
 
+import oops_Intro from '../assets/PublicContent/OOPs/1.Introduction.md?raw';
+import oops_Access_Modifier from '../assets/PublicContent/OOPs/2.Access-Modifier.md?raw';
+import oops_Encapsulation from '../assets/PublicContent/OOPs/3.Encapsulation.md?raw';
+import oops_Constructor from '../assets/PublicContent/OOPs/4.Constructor-and-Destructor.md?raw';
+import oops_Inheritance from '../assets/PublicContent/OOPs/5.Inheritance.md?raw';
+import oops_Overloading from '../assets/PublicContent/OOPs/6.Overloading.md?raw';
+import oops_Abstraction from '../assets/PublicContent/OOPs/7.Abstraction.md?raw';
+import oops_Static from '../assets/PublicContent/OOPs/8.Static.md?raw';
+
+
 
 
 
 import Misc_tokenTypes from '../assets/PublicContent/Misc/Token_Transmission_Types.md?raw';
+
+
+
+
+import project_aiNotes_td from '../assets/PublicContent/Project/1.aiNotes/1.Technical_Document.md?raw';
+import project_aiNotes_techstack from '../assets/PublicContent/Project/1.aiNotes/2.Tech_Stack_Justification.md?raw';
+import project_aiNotes_linebyline from '../assets/PublicContent/Project/1.aiNotes/3.Line_By_Line_Code_Explanation.md?raw';
+import project_aiNotes_ques from '../assets/PublicContent/Project/1.aiNotes/4.100_Potential_Questions.md?raw';
+
+
 
 
 
@@ -45,6 +57,10 @@ import typeface_detailed_code from '../assets/PublicContent/typeface-Finance_Ass
 import typeface_questionsNextensions from '../assets/PublicContent/typeface-Finance_Assistant/3.Questions_and_Extensions.md?raw';
 import typeface_Extensions1 from '../assets/PublicContent/typeface-Finance_Assistant/4.Extension_Code.md?raw';
 import typeface_Extension0 from '../assets/PublicContent/typeface-Finance_Assistant/5.Interview_Friendly_Extensions.md?raw';
+
+
+
+
 
 export const notesData = {
   "High Level Design": {
@@ -100,6 +116,16 @@ export const notesData = {
       "5.6. Recoverability": { content: DBMS_Recoverability},
 
     },
+  },
+  "Object Oriented Programming": {
+    "1. Intro, Classes & Objects": {content : oops_Intro},
+    "2. Access Modifiers": {content : oops_Access_Modifier},
+    "3. Encapsulation": {content : oops_Encapsulation},
+    "4. Constructor & Destructor": {content : oops_Constructor},
+    "5. Inheritance": {content : oops_Inheritance},
+    "6. Overloading": {content : oops_Overloading},
+    "7. Abstraction": {content : oops_Abstraction},
+    "8. Static": {content : oops_Static},
   },
   "Misc": {
     "1. Token Transmission Types": {content : Misc_tokenTypes},
