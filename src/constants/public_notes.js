@@ -60,6 +60,14 @@ import typeface_Extension0 from '../assets/PublicContent/typeface-Finance_Assist
 
 
 
+import tmux_intro from '../assets/PublicContent/tmux/1.Intro.md?raw';
+import tmux_session from '../assets/PublicContent/tmux/2.Session_Management.md?raw';
+import tmux_window from '../assets/PublicContent/tmux/3.Window_Management.md?raw';
+import tmux_panes from '../assets/PublicContent/tmux/4.Panes_Management.md?raw';
+
+
+
+
 
 
 export const notesData = {
@@ -79,6 +87,13 @@ export const notesData = {
       "4.1. Syllabus": { content: HLD_Caching_Contents },
     },
 
+  },
+
+  "tmux": {
+    "1. Intro": {content : tmux_intro},
+    "2. Session Management": {content : tmux_session},
+    "3. Window Management": {content : tmux_window},
+    "4. Panes Management": {content : tmux_panes},
   },
 
   "Project": {
