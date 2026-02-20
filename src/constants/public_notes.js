@@ -67,7 +67,7 @@ import tmux_panes from '../assets/PublicContent/tmux/4.Panes_Management.md?raw';
 
 
 
-
+import linux_structure from '../assets/PublicContent/linux/0.Structure.md?raw';
 import linux_mount from '../assets/PublicContent/linux/2.Mount_Drive.md?raw';
 import linux_ls from '../assets/PublicContent/linux/1.ls.md?raw';
 
@@ -99,9 +99,9 @@ export const notesData = {
     "4. Panes Management": {content : tmux_panes},
   },
   "linux": {
+    "0. Structure": {content : linux_structure},
     "1. ls": {content : linux_ls},
     "2. Mounting": {content : linux_mount},
-
   },
 
   "Project": {
