@@ -64,7 +64,7 @@ import tmux_intro from '../assets/PublicContent/tmux/1.Intro.md?raw';
 import tmux_session from '../assets/PublicContent/tmux/2.Session_Management.md?raw';
 import tmux_window from '../assets/PublicContent/tmux/3.Window_Management.md?raw';
 import tmux_panes from '../assets/PublicContent/tmux/4.Panes_Management.md?raw';
-
+import tmux_misc from '../assets/PublicContent/tmux/5.Misc.md?raw';
 
 
 import linux_structure from '../assets/PublicContent/linux/0.Structure.md?raw';
@@ -98,6 +98,7 @@ export const notesData = {
     "2. Session Management": {content : tmux_session},
     "3. Window Management": {content : tmux_window},
     "4. Panes Management": {content : tmux_panes},
+    "5. Misc": {content : tmux_misc}
   },
   "linux": {
     "0. Structure": {content : linux_structure},
