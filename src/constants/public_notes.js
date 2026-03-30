@@ -71,6 +71,7 @@ import linux_structure from '../assets/PublicContent/linux/0.Structure.md?raw';
 import linux_mount from '../assets/PublicContent/linux/2.Mount_Drive.md?raw';
 import linux_ls from '../assets/PublicContent/linux/1.ls.md?raw';
 import linux_zip from '../assets/PublicContent/linux/3.zip_unzip.md?raw';
+import linux_ulimit from '../assets/PublicContent/linux/4.ulimit.md?raw';
 
 
 
@@ -105,6 +106,7 @@ export const notesData = {
     "1. ls": {content : linux_ls},
     "2. Mounting": {content : linux_mount},
     "3. Zip_Unzip": {content : linux_zip},
+    "4. ulimit": {content : linux_ulimit},
   },
 
   "Project": {
