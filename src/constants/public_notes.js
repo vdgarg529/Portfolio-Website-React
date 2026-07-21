@@ -75,6 +75,18 @@ import linux_ulimit from '../assets/PublicContent/linux/4.ulimit.md?raw';
 import linux_nmap from '../assets/PublicContent/linux/5.nmap.md?raw';
 
 
+import pandas_cheatsheet from '../assets/PublicContent/pandas/cheatsheet.md?raw';
+import numpy_cheatsheet from '../assets/PublicContent/numpy/cheatsheet.md?raw';
+import matplotlib_cheatsheet from '../assets/PublicContent/matplotlib/cheatsheet.md?raw';
+import seaborn_cheatsheet from '../assets/PublicContent/seaborn/cheatsheet.md?raw';
+import plotly_cheatsheet from '../assets/PublicContent/plotly/cheatsheet.md?raw';
+import sklearn_cheatsheet from '../assets/PublicContent/sklearn/cheatsheet.md?raw';
+import pytorch_cheatsheet from '../assets/PublicContent/pytorch/cheatsheet.md?raw';
+
+import dataPreparation_cheatsheet from '../assets/PublicContent/dataAnalytics/1.DataPreparation.md?raw';
+import dataAnalyzing_cheatsheet from '../assets/PublicContent/dataAnalytics/2.AnalyzingData.md?raw';
+import eda_cheatsheet from '../assets/PublicContent/dataAnalytics/3.EDA.md?raw';
+
 export const notesData = {
   "High Level Design": {
     "1. Security": {
@@ -92,6 +104,32 @@ export const notesData = {
       "4.1. Syllabus": { content: HLD_Caching_Contents },
     },
 
+  },
+  "Data Analytics": {
+    "1. Data Preparation": { content: dataPreparation_cheatsheet },
+    "2. Data Analyzing": { content: dataAnalyzing_cheatsheet },
+    "3. EDA": { content: eda_cheatsheet },
+  },
+  "pandas": {
+    "cheatsheet": {content : pandas_cheatsheet},
+  },
+  "numpy": {
+    "cheatsheet": {content : numpy_cheatsheet},
+  },
+  "matplotlib": {
+    "cheatsheet": {content : matplotlib_cheatsheet},
+  },
+  "seaborn": {
+    "cheatsheet": {content : seaborn_cheatsheet},
+  },
+  "plotly": {
+    "cheatsheet": {content : plotly_cheatsheet},
+  },
+  "sklearn": {
+    "cheatsheet": {content : sklearn_cheatsheet},
+  },
+  "pytorch": {
+    "cheatsheet": {content : pytorch_cheatsheet},
   },
 
   "tmux": {
