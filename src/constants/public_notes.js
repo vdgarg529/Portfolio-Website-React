@@ -87,6 +87,18 @@ import dataPreparation_cheatsheet from '../assets/PublicContent/dataAnalytics/1.
 import dataAnalyzing_cheatsheet from '../assets/PublicContent/dataAnalytics/2.AnalyzingData.md?raw';
 import eda_cheatsheet from '../assets/PublicContent/dataAnalytics/3.EDA.md?raw';
 
+
+import langchain_cheatsheet from '../assets/PublicContent/langchain/cheatsheet.md?raw';
+import langgraph_cheatsheet from '../assets/PublicContent/langgraph/cheatsheet.md?raw';
+import crewai_cheatsheet from '../assets/PublicContent/crewai/cheatsheet.md?raw';
+import mcp_cheatsheet from '../assets/PublicContent/mcp/cheatsheet.md?raw';
+import rag_cheatsheet from '../assets/PublicContent/rag/cheatsheet.md?raw';
+
+
+
+
+
+
 export const notesData = {
   "High Level Design": {
     "1. Security": {
@@ -109,6 +121,13 @@ export const notesData = {
     "1. Data Preparation": { content: dataPreparation_cheatsheet },
     "2. Data Analyzing": { content: dataAnalyzing_cheatsheet },
     "3. EDA": { content: eda_cheatsheet },
+  },
+  "Modern ML": {
+    "1. langchain": { content: langchain_cheatsheet },
+    "2. langgraph": { content: langgraph_cheatsheet },
+    "3. crewai": { content: crewai_cheatsheet },
+    "4. mcp": { content: mcp_cheatsheet },
+    "5. rag": { content: rag_cheatsheet },
   },
   "pandas": {
     "cheatsheet": {content : pandas_cheatsheet},
