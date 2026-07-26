@@ -13,9 +13,9 @@ import {
   Wrench,
   Home,
   ArrowRight,
+  Check,
+  Copy,
 } from "lucide-react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Icon resolver — maps string names from CATEGORY_META to Lucide components
@@ -69,36 +69,37 @@ const CodeBlock = ({ language, value }) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(value);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <div className="relative my-4 rounded-lg border border-gray-700 dark:border-gray-600 overflow-hidden">
-      <button
-        onClick={handleCopy}
-        className={`absolute top-2 right-2 px-3 py-1 text-xs font-medium rounded-md transition-colors
-          ${
-            copied
-              ? "bg-green-600 text-white"
-              : "bg-purple-600 text-white hover:bg-purple-500"
-          }`}
-      >
-        {copied ? "Copied!" : "Copy"}
-      </button>
-      <div className="overflow-x-auto">
-        <SyntaxHighlighter
-          style={oneDark}
-          language={language}
-          PreTag="div"
-          customStyle={{
-            margin: 0,
-            background: "transparent",
-            padding: "1rem",
-            whiteSpace: "pre",
-          }}
+    <div className="relative my-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-[#1e1e1e] shadow-lg overflow-hidden font-sans">
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 py-2.5 bg-[#2d2d2d] border-b border-gray-700/50">
+        <div className="flex items-center gap-2">
+          <div className="flex gap-1.5">
+            <div className="w-3 h-3 rounded-full bg-red-500/90 shadow-sm"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500/90 shadow-sm"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500/90 shadow-sm"></div>
+          </div>
+          {language && (
+            <span className="ml-3 text-xs font-medium text-gray-400 uppercase tracking-wider">
+              {language}
+            </span>
+          )}
+        </div>
+        <button
+          onClick={handleCopy}
+          className="flex items-center justify-center p-1.5 rounded-md text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+          title="Copy code"
         >
+          {copied ? <Check size={16} className="text-green-400" /> : <Copy size={16} />}
+        </button>
+      </div>
+      <div className="overflow-x-auto p-4 text-sm leading-relaxed">
+        <code className="text-gray-100 font-mono whitespace-pre block">
           {value}
-        </SyntaxHighlighter>
+        </code>
       </div>
     </div>
   );
@@ -611,7 +612,7 @@ const Notes = ({ darkMode }) => {
 
                         return (
                           <code
-                            className={`${className} px-1 py-0.5 rounded text-purple-500 font-mono`}
+                            className={`px-1.5 py-0.5 rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-400 font-mono text-[0.875em] ${className || ""}`}
                             {...props}
                           >
                             {children}
