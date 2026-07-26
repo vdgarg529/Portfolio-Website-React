@@ -34,12 +34,7 @@ import oops_Abstraction from '../assets/PublicContent/OOPs/7.Abstraction.md?raw'
 import oops_Static from '../assets/PublicContent/OOPs/8.Static.md?raw';
 
 
-
-
-
 import Misc_tokenTypes from '../assets/PublicContent/Misc/Token_Transmission_Types.md?raw';
-
-
 
 
 import project_aiNotes_td from '../assets/PublicContent/Project/1.aiNotes/1.Technical_Document.md?raw';
@@ -48,16 +43,11 @@ import project_aiNotes_linebyline from '../assets/PublicContent/Project/1.aiNote
 import project_aiNotes_ques from '../assets/PublicContent/Project/1.aiNotes/4.100_Potential_Questions.md?raw';
 
 
-
-
-
-
 import typeface_commented_code from '../assets/PublicContent/typeface-Finance_Assistant/1.Commented_Code_explanation.md?raw';
 import typeface_detailed_code from '../assets/PublicContent/typeface-Finance_Assistant/2.Detailed.md?raw';
 import typeface_questionsNextensions from '../assets/PublicContent/typeface-Finance_Assistant/3.Questions_and_Extensions.md?raw';
 import typeface_Extensions1 from '../assets/PublicContent/typeface-Finance_Assistant/4.Extension_Code.md?raw';
 import typeface_Extension0 from '../assets/PublicContent/typeface-Finance_Assistant/5.Interview_Friendly_Extensions.md?raw';
-
 
 
 import tmux_intro from '../assets/PublicContent/tmux/1.Intro.md?raw';
@@ -95,133 +85,192 @@ import mcp_cheatsheet from '../assets/PublicContent/mcp/cheatsheet.md?raw';
 import rag_cheatsheet from '../assets/PublicContent/rag/cheatsheet.md?raw';
 
 
+// ─────────────────────────────────────────────────────────────────────────────
+// CATEGORY METADATA — icons (Lucide icon names) and descriptions for each
+// top-level category shown as the primary navigation tabs.
+// ─────────────────────────────────────────────────────────────────────────────
+export const CATEGORY_META = {
+  "Subjects": {
+    icon: "GraduationCap",
+    description: "Core CS subjects & academic topics",
+  },
+  "Projects": {
+    icon: "FolderGit2",
+    description: "In-depth project documentation & walkthroughs",
+  },
+  "Tools": {
+    icon: "Wrench",
+    description: "Languages, libraries & developer utilities",
+  },
+};
 
 
+// ─────────────────────────────────────────────────────────────────────────────
+// NOTES CATALOG — hierarchical taxonomy wrapping all note content.
+//
+// Structure:  Category  →  Subcategory  →  Topic  →  { subtopics / content }
+//
+// Leaf nodes have a `content` key with imported markdown.
+// Branch nodes are plain objects whose values are either more branches or leaves.
+// ─────────────────────────────────────────────────────────────────────────────
+export const notesCatalog = {
 
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SUBJECTS
+  // ═══════════════════════════════════════════════════════════════════════════
+  "Subjects": {
 
-export const notesData = {
-  "High Level Design": {
-    "1. Security": {
-      "1.1. Syllabus": { content: HLD_Security_Contents },
-      "1.2. Foundations of Security": { content: HLD_Security_Foundations_of_Security },
-      "1.3. Security in System Design": { content: HLD_Security_Security_in_System_Design },
+    "System Design": {
+      "High Level Design": {
+        "1. Security": {
+          "1.1. Syllabus": { content: HLD_Security_Contents },
+          "1.2. Foundations of Security": { content: HLD_Security_Foundations_of_Security },
+          "1.3. Security in System Design": { content: HLD_Security_Security_in_System_Design },
+        },
+        "2. Load Balancing": {
+          "2.1. Syllabus": { content: HLD_Load_Balancing_Contents },
+        },
+        "3. Message Queues": {
+          "3.1. Syllabus": { content: HLD_Message_Queues_Contents },
+        },
+        "4. Caching": {
+          "4.1. Syllabus": { content: HLD_Caching_Contents },
+        },
+      },
     },
-    "2. Load Balancing": {
-      "2.1. Syllabus": { content: HLD_Load_Balancing_Contents },
-    },
-    "3. Message Queues": {
-      "3.1. Syllabus": { content: HLD_Message_Queues_Contents },
-    },
-    "4. Caching": {
-      "4.1. Syllabus": { content: HLD_Caching_Contents },
+
+    "Databases": {
+      "DBMS": {
+        "1. Syllabus": { content: DBMS_Syllabus },
+        "2. Top 100 Questions": { content: DBMS_Questions },
+        "3. Introduction": {
+          "3.1. Keywords": { content: DBMS_Intro },
+          "3.2. Architecture": { content: DBMS_Architecture },
+          "3.3. Relational Schema": { content: DBMS_Relational_Schema },
+        },
+        "4. Fds & Normalization": {
+          "4.1. Fds": { content: DBMS_fds },
+          "4.2. Count Of Super Keys": { content: DBMS_superKeys },
+          "4.3. Decomposition": { content: DBMS_decomposition },
+          "4.4. Normalization": { content: DBMS_normalization },
+        },
+        "5. ACID & Concurrency": {
+          "5.1. Introduction and ACID": { content: DBMS_IntroACID },
+          "5.2. Schedules": { content: DBMS_schedules },
+          "5.3. Serializability": { content: DBMS_serializability },
+          "5.4. No Of Schedules": { content: DBMS_Noofschedules },
+          "5.5. Problems with concurrency": { content: DBMS_ProblemsConcurrency },
+          "5.6. Recoverability": { content: DBMS_Recoverability },
+        },
+      },
     },
 
-  },
-  "Data Analytics": {
-    "1. Data Preparation": { content: dataPreparation_cheatsheet },
-    "2. Data Analyzing": { content: dataAnalyzing_cheatsheet },
-    "3. EDA": { content: eda_cheatsheet },
-  },
-  "Modern ML": {
-    "1. langchain": { content: langchain_cheatsheet },
-    "2. langgraph": { content: langgraph_cheatsheet },
-    "3. crewai": { content: crewai_cheatsheet },
-    "4. mcp": { content: mcp_cheatsheet },
-    "5. rag": { content: rag_cheatsheet },
-  },
-  "pandas": {
-    "cheatsheet": {content : pandas_cheatsheet},
-  },
-  "numpy": {
-    "cheatsheet": {content : numpy_cheatsheet},
-  },
-  "matplotlib": {
-    "cheatsheet": {content : matplotlib_cheatsheet},
-  },
-  "seaborn": {
-    "cheatsheet": {content : seaborn_cheatsheet},
-  },
-  "plotly": {
-    "cheatsheet": {content : plotly_cheatsheet},
-  },
-  "sklearn": {
-    "cheatsheet": {content : sklearn_cheatsheet},
-  },
-  "pytorch": {
-    "cheatsheet": {content : pytorch_cheatsheet},
-  },
-
-  "tmux": {
-    "1. Intro": {content : tmux_intro},
-    "2. Session Management": {content : tmux_session},
-    "3. Window Management": {content : tmux_window},
-    "4. Panes Management": {content : tmux_panes},
-    "5. Misc": {content : tmux_misc}
-  },
-  "linux": {
-    "0. Structure": {content : linux_structure},
-    "1. ls": {content : linux_ls},
-    "2. Mounting": {content : linux_mount},
-    "3. Zip_Unzip": {content : linux_zip},
-    "4. ulimit": {content : linux_ulimit},
-    "5. nmap": {content : linux_nmap},
-  },
-
-  "Project": {
-    "1. Note Mgmt": {
-      "1.1. Technical Document": { content: project_aiNotes_td},
-      "1.2. Tech Stack Justification": { content: project_aiNotes_techstack },
-      "1.3. Line By Line Explaination": { content: project_aiNotes_linebyline },
-      "1.4. Potential Questions": { content: project_aiNotes_ques },
+    "Object Oriented Programming": {
+      "OOPs": {
+        "1. Intro, Classes & Objects": { content: oops_Intro },
+        "2. Access Modifiers": { content: oops_Access_Modifier },
+        "3. Encapsulation": { content: oops_Encapsulation },
+        "4. Constructor & Destructor": { content: oops_Constructor },
+        "5. Inheritance": { content: oops_Inheritance },
+        "6. Overloading": { content: oops_Overloading },
+        "7. Abstraction": { content: oops_Abstraction },
+        "8. Static": { content: oops_Static },
+      },
     },
-    "2. VLC": {
-      "2.1. Syllabus": { content: "Coming Soon" },
+
+    "Data Science": {
+      "Data Analytics": {
+        "1. Data Preparation": { content: dataPreparation_cheatsheet },
+        "2. Data Analyzing": { content: dataAnalyzing_cheatsheet },
+        "3. EDA": { content: eda_cheatsheet },
+      },
+    },
+
+    "AI & ML": {
+      "Modern ML": {
+        "1. LangChain": { content: langchain_cheatsheet },
+        "2. LangGraph": { content: langgraph_cheatsheet },
+        "3. CrewAI": { content: crewai_cheatsheet },
+        "4. MCP": { content: mcp_cheatsheet },
+        "5. RAG": { content: rag_cheatsheet },
+      },
+    },
+
+    "Miscellaneous": {
+      "1. Token Transmission Types": { content: Misc_tokenTypes },
     },
   },
 
-  "DBMS": {
-    "1. Syllabus": { content: DBMS_Syllabus},
-    "2. Top 100 Questions": { content: DBMS_Questions},
-    "3. Introduction": {
-      "3.1. Keywords": { content: DBMS_Intro},
-      "3.2. Architecture": { content: DBMS_Architecture},
-      "3.3. Relational Schema": { content: DBMS_Relational_Schema},
-    },
-    "4. Fds & Normalization": {
-      "4.1. Fds": { content: DBMS_fds},
-      "4.2. Count Of Super Keys": { content: DBMS_superKeys},
-      "4.3. Decomposition": { content: DBMS_decomposition},
-      "4.4. Normalization": { content: DBMS_normalization},
-    },
-    "5. ACID & Concurrency": {
-      "5.1. Introduction and ACID": { content: DBMS_IntroACID},
-      "5.2. Schedules": { content: DBMS_schedules},
-      "5.3. Serializability": { content: DBMS_serializability},
-      "5.4. No Of Schedules": { content: DBMS_Noofschedules},
-      "5.5. Problems with concurrency": { content: DBMS_ProblemsConcurrency},
-      "5.6. Recoverability": { content: DBMS_Recoverability},
+  // ═══════════════════════════════════════════════════════════════════════════
+  // PROJECTS
+  // ═══════════════════════════════════════════════════════════════════════════
+  "Projects": {
 
+    "Note Management": {
+      "1. Technical Document": { content: project_aiNotes_td },
+      "2. Tech Stack Justification": { content: project_aiNotes_techstack },
+      "3. Line By Line Explanation": { content: project_aiNotes_linebyline },
+      "4. Potential Questions": { content: project_aiNotes_ques },
     },
-  },
-  "Object Oriented Programming": {
-    "1. Intro, Classes & Objects": {content : oops_Intro},
-    "2. Access Modifiers": {content : oops_Access_Modifier},
-    "3. Encapsulation": {content : oops_Encapsulation},
-    "4. Constructor & Destructor": {content : oops_Constructor},
-    "5. Inheritance": {content : oops_Inheritance},
-    "6. Overloading": {content : oops_Overloading},
-    "7. Abstraction": {content : oops_Abstraction},
-    "8. Static": {content : oops_Static},
-  },
-  "Misc": {
-    "1. Token Transmission Types": {content : Misc_tokenTypes},
-  },
-  "TypeFace-Finance_Assistant": {
-    "1. Commented code explain": {content : typeface_commented_code},
-    "2. Detailed code explain": {content : typeface_detailed_code},
-    "3. Question & Extension": {content : typeface_questionsNextensions},
-    "4. Extension 1": {content : typeface_Extension0},
-    "5. Extension 0": {content : typeface_Extensions1},
+
+    "VLC Gesture Control": {
+      "1. Overview": { content: "Coming Soon" },
+    },
+
+    "TypeFace Finance Assistant": {
+      "1. Commented Code Explanation": { content: typeface_commented_code },
+      "2. Detailed Code Explanation": { content: typeface_detailed_code },
+      "3. Questions & Extensions": { content: typeface_questionsNextensions },
+      "4. Extension — Interview Friendly": { content: typeface_Extension0 },
+      "5. Extension — Code": { content: typeface_Extensions1 },
+    },
   },
 
+  // ═══════════════════════════════════════════════════════════════════════════
+  // TOOLS
+  // ═══════════════════════════════════════════════════════════════════════════
+  "Tools": {
+
+    "Python Libraries": {
+      "pandas": {
+        "Cheatsheet": { content: pandas_cheatsheet },
+      },
+      "numpy": {
+        "Cheatsheet": { content: numpy_cheatsheet },
+      },
+      "matplotlib": {
+        "Cheatsheet": { content: matplotlib_cheatsheet },
+      },
+      "seaborn": {
+        "Cheatsheet": { content: seaborn_cheatsheet },
+      },
+      "plotly": {
+        "Cheatsheet": { content: plotly_cheatsheet },
+      },
+      "sklearn": {
+        "Cheatsheet": { content: sklearn_cheatsheet },
+      },
+      "pytorch": {
+        "Cheatsheet": { content: pytorch_cheatsheet },
+      },
+    },
+
+    "DevOps & Terminal": {
+      "tmux": {
+        "1. Intro": { content: tmux_intro },
+        "2. Session Management": { content: tmux_session },
+        "3. Window Management": { content: tmux_window },
+        "4. Panes Management": { content: tmux_panes },
+        "5. Misc": { content: tmux_misc },
+      },
+      "linux": {
+        "0. Structure": { content: linux_structure },
+        "1. ls": { content: linux_ls },
+        "2. Mounting": { content: linux_mount },
+        "3. Zip & Unzip": { content: linux_zip },
+        "4. ulimit": { content: linux_ulimit },
+        "5. nmap": { content: linux_nmap },
+      },
+    },
+  },
 };
