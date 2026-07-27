@@ -81,8 +81,76 @@ import eda_cheatsheet from '../assets/PublicContent/dataAnalytics/3.EDA.md?raw';
 import langchain_cheatsheet from '../assets/PublicContent/langchain/cheatsheet.md?raw';
 import langgraph_cheatsheet from '../assets/PublicContent/langgraph/cheatsheet.md?raw';
 import crewai_cheatsheet from '../assets/PublicContent/crewai/cheatsheet.md?raw';
-import mcp_cheatsheet from '../assets/PublicContent/mcp/cheatsheet.md?raw';
-import rag_cheatsheet from '../assets/PublicContent/rag/cheatsheet.md?raw';
+import mcp_1 from '../assets/PublicContent/mcp/mcp_1.md?raw';
+import mcp_2 from '../assets/PublicContent/mcp/mcp_2.md?raw';
+import mcp_3 from '../assets/PublicContent/mcp/mcp_3.md?raw';
+import mcp_4 from '../assets/PublicContent/mcp/mcp_4.md?raw';
+import mcp_5 from '../assets/PublicContent/mcp/mcp_5.md?raw';
+import mcp_6 from '../assets/PublicContent/mcp/mcp_6.md?raw';
+import mcp_7 from '../assets/PublicContent/mcp/mcp_7.md?raw';
+import mcp_8 from '../assets/PublicContent/mcp/mcp_8.md?raw';
+import mcp_9 from '../assets/PublicContent/mcp/mcp_9.md?raw';
+import mcp_10 from '../assets/PublicContent/mcp/mcp_10.md?raw';
+import mcp_11 from '../assets/PublicContent/mcp/mcp_11.md?raw';
+import mcp_12 from '../assets/PublicContent/mcp/mcp_12.md?raw';
+import mcp_13 from '../assets/PublicContent/mcp/mcp_13.md?raw';
+import mcp_14 from '../assets/PublicContent/mcp/mcp_14.md?raw';
+import mcp_15 from '../assets/PublicContent/mcp/mcp_15.md?raw';
+import mcp_16 from '../assets/PublicContent/mcp/mcp_16.md?raw';
+import mcp_17 from '../assets/PublicContent/mcp/mcp_17.md?raw';
+import mcp_18 from '../assets/PublicContent/mcp/mcp_18.md?raw';
+import mcp_19 from '../assets/PublicContent/mcp/mcp_19.md?raw';
+import mcp_20 from '../assets/PublicContent/mcp/mcp_20.md?raw';
+import mcp_21 from '../assets/PublicContent/mcp/mcp_21.md?raw';
+import mcp_22 from '../assets/PublicContent/mcp/mcp_22.md?raw';
+import mcp_23 from '../assets/PublicContent/mcp/mcp_23.md?raw';
+import mcp_24 from '../assets/PublicContent/mcp/mcp_24.md?raw';
+import mcp_25 from '../assets/PublicContent/mcp/mcp_25.md?raw';
+import mcp_26 from '../assets/PublicContent/mcp/mcp_26.md?raw';
+import mcp_27 from '../assets/PublicContent/mcp/mcp_27.md?raw';
+import mcp_28 from '../assets/PublicContent/mcp/mcp_28.md?raw';
+import mcp_29 from '../assets/PublicContent/mcp/mcp_29.md?raw';
+import mcp_30 from '../assets/PublicContent/mcp/mcp_30.md?raw';
+import mcp_31 from '../assets/PublicContent/mcp/mcp_31.md?raw';
+import mcp_32 from '../assets/PublicContent/mcp/mcp_32.md?raw';
+import mcp_33 from '../assets/PublicContent/mcp/mcp_33.md?raw';
+import rag_1 from '../assets/PublicContent/rag/rag_1.md?raw';
+import rag_2 from '../assets/PublicContent/rag/rag_2.md?raw';
+import rag_3 from '../assets/PublicContent/rag/rag_3.md?raw';
+import rag_4 from '../assets/PublicContent/rag/rag_4.md?raw';
+import rag_5 from '../assets/PublicContent/rag/rag_5.md?raw';
+import rag_6 from '../assets/PublicContent/rag/rag_6.md?raw';
+import rag_7 from '../assets/PublicContent/rag/rag_7.md?raw';
+import rag_8 from '../assets/PublicContent/rag/rag_8.md?raw';
+import rag_9 from '../assets/PublicContent/rag/rag_9.md?raw';
+import rag_10 from '../assets/PublicContent/rag/rag_10.md?raw';
+import rag_11 from '../assets/PublicContent/rag/rag_11.md?raw';
+import rag_12 from '../assets/PublicContent/rag/rag_12.md?raw';
+import rag_13 from '../assets/PublicContent/rag/rag_13.md?raw';
+import rag_14 from '../assets/PublicContent/rag/rag_14.md?raw';
+import rag_15 from '../assets/PublicContent/rag/rag_15.md?raw';
+import rag_16 from '../assets/PublicContent/rag/rag_16.md?raw';
+import rag_17 from '../assets/PublicContent/rag/rag_17.md?raw';
+import rag_18 from '../assets/PublicContent/rag/rag_18.md?raw';
+import rag_19 from '../assets/PublicContent/rag/rag_19.md?raw';
+import rag_20 from '../assets/PublicContent/rag/rag_20.md?raw';
+import rag_21 from '../assets/PublicContent/rag/rag_21.md?raw';
+import rag_22 from '../assets/PublicContent/rag/rag_22.md?raw';
+import rag_23 from '../assets/PublicContent/rag/rag_23.md?raw';
+import rag_24 from '../assets/PublicContent/rag/rag_24.md?raw';
+import rag_25 from '../assets/PublicContent/rag/rag_25.md?raw';
+import rag_26 from '../assets/PublicContent/rag/rag_26.md?raw';
+import rag_27 from '../assets/PublicContent/rag/rag_27.md?raw';
+import rag_28 from '../assets/PublicContent/rag/rag_28.md?raw';
+import rag_29 from '../assets/PublicContent/rag/rag_29.md?raw';
+import rag_30 from '../assets/PublicContent/rag/rag_30.md?raw';
+import rag_31 from '../assets/PublicContent/rag/rag_31.md?raw';
+import rag_32 from '../assets/PublicContent/rag/rag_32.md?raw';
+import rag_33 from '../assets/PublicContent/rag/rag_33.md?raw';
+import rag_34 from '../assets/PublicContent/rag/rag_34.md?raw';
+import rag_35 from '../assets/PublicContent/rag/rag_35.md?raw';
+import rag_36 from '../assets/PublicContent/rag/rag_36.md?raw';
+import rag_37 from '../assets/PublicContent/rag/rag_37.md?raw';
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -186,13 +254,80 @@ export const notesCatalog = {
       },
     },
 
-    "AI & ML": {
-      "Modern ML": {
-        "1. LangChain": { content: langchain_cheatsheet },
-        "2. LangGraph": { content: langgraph_cheatsheet },
-        "3. CrewAI": { content: crewai_cheatsheet },
-        "4. MCP": { content: mcp_cheatsheet },
-        "5. RAG": { content: rag_cheatsheet },
+    "Agentic AI": {
+      "MCP": {
+        "1. Introduction to MCP": { content: mcp_1 },
+        "2. MCP Architecture": { content: mcp_2 },
+        "3. MCP Protocol Layers": { content: mcp_3 },
+        "4. JSON-RPC Fundamentals": { content: mcp_4 },
+        "5. MCP Lifecycle": { content: mcp_5 },
+        "6. MCP Transports": { content: mcp_6 },
+        "7. Core Server Primitives": { content: mcp_7 },
+        "8. MCP Tools": { content: mcp_8 },
+        "9. MCP Resources": { content: mcp_9 },
+        "10. MCP Prompts": { content: mcp_10 },
+        "11. Python SDK and FastMCP": { content: mcp_11 },
+        "12. Complete MCP Server Example": { content: mcp_12 },
+        "13. Building an MCP Client": { content: mcp_13 },
+        "14. Connecting MCP to an LLM": { content: mcp_14 },
+        "15. Client Features": { content: mcp_15 },
+        "16. Sampling": { content: mcp_16 },
+        "17. Roots": { content: mcp_17 },
+        "18. Elicitation": { content: mcp_18 },
+        "19. Protocol Utilities": { content: mcp_19 },
+        "20. Experimental Tasks": { content: mcp_20 },
+        "21. Authorization": { content: mcp_21 },
+        "22. MCP Security": { content: mcp_22 },
+        "23. Testing and Debugging": { content: mcp_23 },
+        "24. Logging and Observability": { content: mcp_24 },
+        "25. Production MCP Server Design": { content: mcp_25 },
+        "26. MCP Registry": { content: mcp_26 },
+        "27. MCP vs APIs and Frameworks": { content: mcp_27 },
+        "28. When to Use What": { content: mcp_28 },
+        "29. Common MCP Mistakes": { content: mcp_29 },
+        "30. Recommended Project Structure": { content: mcp_30 },
+        "31. Recommended Learning Roadmap": { content: mcp_31 },
+        "32. Suggested Projects": { content: mcp_32 },
+        "33. Final MCP Checklist": { content: mcp_33 },
+      },
+      "RAG": {
+        "1. Introduction to RAG": { content: rag_1 },
+        "2. Parametric and Non-Parametric Knowledge": { content: rag_2 },
+        "3. Basic RAG Architecture": { content: rag_3 },
+        "4. Types of RAG": { content: rag_4 },
+        "5. Data Sources": { content: rag_5 },
+        "6. Document Ingestion": { content: rag_6 },
+        "7. Chunking": { content: rag_7 },
+        "8. Embeddings": { content: rag_8 },
+        "9. Vector Indexes and Vector Databases": { content: rag_9 },
+        "10. Sparse Retrieval": { content: rag_10 },
+        "11. Hybrid Retrieval": { content: rag_11 },
+        "12. Query Processing": { content: rag_12 },
+        "13. Retrieval Strategies": { content: rag_13 },
+        "14. Reranking": { content: rag_14 },
+        "15. Context Construction": { content: rag_15 },
+        "16. RAG Prompting": { content: rag_16 },
+        "17. Citations and Provenance": { content: rag_17 },
+        "18. Conversational RAG": { content: rag_18 },
+        "19. Multi-Hop RAG": { content: rag_19 },
+        "20. Adaptive and Corrective RAG": { content: rag_20 },
+        "21. Agentic RAG": { content: rag_21 },
+        "22. Graph RAG": { content: rag_22 },
+        "23. Multimodal RAG": { content: rag_23 },
+        "24. Structured and Database RAG": { content: rag_24 },
+        "25. RAG Evaluation": { content: rag_25 },
+        "26. Failure Analysis": { content: rag_26 },
+        "27. RAG Security": { content: rag_27 },
+        "28. Production RAG Architecture": { content: rag_28 },
+        "29. Latency and Cost Optimization": { content: rag_29 },
+        "30. Testing RAG Systems": { content: rag_30 },
+        "31. Minimal End-to-End RAG Example": { content: rag_31 },
+        "32. More Complete RAG Pipeline": { content: rag_32 },
+        "33. When to Use What": { content: rag_33 },
+        "34. Common RAG Mistakes": { content: rag_34 },
+        "35. Recommended Learning Roadmap": { content: rag_35 },
+        "36. Suggested Projects": { content: rag_36 },
+        "37. Final RAG Checklist": { content: rag_37 },
       },
     },
 
@@ -272,5 +407,10 @@ export const notesCatalog = {
         "5. nmap": { content: linux_nmap },
       },
     },
+    "ML Tools": {
+      "LangChain": { content: langchain_cheatsheet },
+      "LangGraph": { content: langgraph_cheatsheet },
+      "CrewAI": { content: crewai_cheatsheet },
+    }
   },
 };
