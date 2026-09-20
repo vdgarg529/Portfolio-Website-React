@@ -153,6 +153,14 @@ import rag_36 from '../assets/PublicContent/rag/rag_36.md?raw';
 import rag_37 from '../assets/PublicContent/rag/rag_37.md?raw';
 
 
+import roadmap from '../assets/PublicContent/DataManagement/roadmap.md?raw';
+import phase1_2 from '../assets/PublicContent/DataManagement/Stage1/phase2.md?raw'; 
+import phase1_3 from '../assets/PublicContent/DataManagement/Stage1/phase3.md?raw'; 
+import phase1_4 from '../assets/PublicContent/DataManagement/Stage1/phase4.md?raw';
+import phase1_5 from '../assets/PublicContent/DataManagement/Stage1/phase5.md?raw';
+import phase1_6 from '../assets/PublicContent/DataManagement/Stage1/phase6.md?raw';
+
+
 // ─────────────────────────────────────────────────────────────────────────────
 // CATEGORY METADATA — icons (Lucide icon names) and descriptions for each
 // top-level category shown as the primary navigation tabs.
@@ -333,6 +341,19 @@ export const notesCatalog = {
 
     "Miscellaneous": {
       "1. Token Transmission Types": { content: Misc_tokenTypes },
+    },
+    "Data Management": {
+      "Roadmap": { content: roadmap },
+      "Foundation":{
+        "Phase 2": { content: phase1_2 },
+        "Phase 3": { content: phase1_3 },
+        "Phase 4": { content: phase1_4 },
+        "Phase 5": { content: phase1_5 },
+        "Phase 6": { content: phase1_6 },
+      },
+      "Trust & Governance":{
+        "Phase 2": { content: phase1_2 },
+      },
     },
   },
 
